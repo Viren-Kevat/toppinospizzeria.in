@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AFRO! Restaurant & Lounge Birmingham</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="navbar fixed-top">
+        <div class="container-fluid px-5 py-4">
+            <a class="navbar-brand" href="#">
+                <img alt="Fidalgo Logo" class="logo-img" src="img/logo.png" />
+            </a>
+            <button class="btn menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                <span class="menu-text">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#explore">Explore</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#chefs">Chefs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#visit">Visit Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <video class="hero-video" src="img/video-bg.mp4" autoplay loop muted playsinline></video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Afro</h1><br />
+            <h2>Restaurant, Bar & Lounge</h2>
+        </div>
+        <!-- / -->
+        <!-- <div class="hero-pagination">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div> -->
+    </section>
+
+    <!-- Explore Section -->
+    <section id="explore" class="explore-section container">
+        <span class="section-label">Explore Afro Flavors</span>
+        <div class="explore-grid">
+            <span class="explore-item">Afro Bites</span>
+            <span class="explore-item">Small Chops</span>
+            <span class="explore-item">Grills & Skewers</span>
+            <span class="explore-item">Seafood Platters</span>
+            <span class="explore-item">Signature Cocktails</span>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation-section container">
+        <div class="reservation-grid">
+            <div class="reservation-img-wrap">
+                <video class="hero-video" src="img/v1.mp4" autoplay loop muted playsinline></video>
+            </div>
+
+            <div class="reservation-form-wrap">
+                <a class="navbar-brand" href="#">
+                    <img alt="Fidalgo Logo" class="logo-img" src="img/logo.png" />
+                </a>
+                <h2 class="reservation-title">Lock In Your Reservation</h2>
+                <p class="reservation-note">*reservations recommended</p>
+
+                <form class="reservation-form" onsubmit="return false;">
+
+                    <!-- Full Name -->
+                    <div class="form-field">
+                        <i class="fa-regular fa-user form-icon"></i>
+                        <input type="text" class="form-control" placeholder="Full Name" />
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-field">
+                        <i class="fa-regular fa-envelope form-icon"></i>
+                        <input type="email" class="form-control" placeholder="Email Address" />
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-field gap-2 phone-field">
+                        <button type="button" class="phone-flag-btn">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="UK flag" width="20" height="14" />
+                            <span class="phone-caret"><i class="fa-solid fa-chevron-down"></i></span>
+                        </button>
+                        <input type="tel" class="form-control phone-input" placeholder="Phone Number" />
+                    </div>
+
+                    <!-- Date & Time -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <i class="fa-regular fa-calendar form-icon"></i>
+                            <input type="date" class="form-control" />
+                        </div>
+                        <div class="form-field">
+                            <i class="fa-regular fa-clock form-icon"></i>
+                            <select class="form-control form-select">
+                                <option value="" disabled selected>Time</option>
+                                <option>11:00 am</option>
+                                <option>12:00 pm</option>
+                                <option>01:00 pm</option>
+                                <option>06:00 pm</option>
+                                <option>07:00 pm</option>
+                                <option>08:00 pm</option>
+                                <option>09:00 pm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Select Table -->
+                    <div class="form-field">
+                        <i class="fa-solid fa-utensils form-icon"></i>
+                        <select class="form-control form-select">
+                            <option value="" disabled selected>Select Table</option>
+                            <option>Window Seat — 2 People</option>
+                            <option>Bar Counter — 1–2 People</option>
+                            <option>Private Booth — 4 People</option>
+                            <option>Tatami Room — 6 People</option>
+                            <option>Omakase Bar — 8 People</option>
+                        </select>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="form-field form-field--textarea">
+                        <i class="fa-regular fa-message form-icon form-icon--top"></i>
+                        <textarea class="form-control form-textarea p-0" placeholder="Any Additional Information"
+                            rows="3"></textarea>
+                    </div>
+
+                    <!-- Promotional checkbox -->
+                    <label class="promo-checkbox">
+                        <input type="checkbox" class="promo-check-input" />
+                        <span class="promo-check-label">I would like to receive promotional emails and offers.</span>
+                    </label>
+
+                    <button type="submit" class="btn btn-reserve">Book Your Table</button>
+                </form>
+
+                <!-- Success Overlay -->
+                <div class="reservation-success-overlay" id="reservationSuccess">
+                    <div class="success-content">
+                        <div class="success-checkmark">
+                            <svg class="checkmark-svg" viewBox="0 0 52 52">
+                                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                            </svg>
+                        </div>
+                        <h3 class="success-title">Reservation Confirmed!</h3>
+                        <p class="success-message">We'll see you soon. A confirmation has been sent to your email.</p>
+                        <button type="button" class="btn btn-reserve success-close-btn" id="successCloseBtn">Make
+                            Another Reservation</button>
+                    </div>
+                </div>
+
+                <p class="powered-by">*Powered by OpenTable</p>
+            </div>
+
+            <!-- <div class="reservation-img-wrap">
+                <img alt="Woman Eating Sushi" class="reservation-img"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ujBzdwJP0Dur2M6m4pAymUvQZMuDSuXYP12tPu7QD8WHQN2xr-Xpr-UtW1xIsH1i97OKcBikDDprnlrc95aNFxMT1zdy4jkE_Woj3hhDCZTKEkEG7TrhMcXnq_xmmHkefdELcdCVBS0PDYpDLK3ivFU-kmCCFOzanx9ReFMRDZVsxS0vwbY_UVSFiDqNA8FpfMUYt3GoEGkuk3B9h3UNk1BuycmMhYdg7v5Ulp15zKfyY1uBl47GcmgqXU" />
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section container">
+        <div class="section-header">
+            <h2 class="section-title">Signature Dishes</h2>
+            <p class="section-desc">Discover our carefully curated selection of authentic African dishes, each prepared
+                with premium ingredients and traditional cooking methods to bring you the true taste of the continent.
+            </p>
+        </div>
+        <div class="swiper menu-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <h5 class="menu-card-name">Teriyaki Roll</h5>
+                            <span class="menu-card-price">$35.00</span>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Teriyaki Roll" class="menu-card-img" src="img/sushi-2.png" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <div>
+                                <h5 class="menu-card-name">Fujisan</h5>
+                                <span class="badge-sale">Sale</span>
+                            </div>
+                            <div class="price-wrap">
+                                <span class="price-old">$31.00</span>
+                                <span class="menu-card-price">$27.00</span>
+                            </div>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Fujisan Roll" class="menu-card-img" src="img/sushi3.jpg" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <h5 class="menu-card-name">Nigiri Salmon</h5>
+                            <span class="menu-card-price">$30.00</span>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Nigiri Salmon" class="menu-card-img" src="img/sushi-1.png" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <h5 class="menu-card-name">Thai Roll</h5>
+                            <span class="menu-card-price">$38.00</span>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Thai Roll" class="menu-card-img" src="img/sushi-4.png" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <!-- Cloned slides for infinite loop -->
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <h5 class="menu-card-name">Teriyaki Roll</h5>
+                            <span class="menu-card-price">$35.00</span>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Teriyaki Roll" class="menu-card-img" src="img/sushi-2.png" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <div>
+                                <h5 class="menu-card-name">Fujisan</h5>
+                                <span class="badge-sale">Sale</span>
+                            </div>
+                            <div class="price-wrap">
+                                <span class="price-old">$31.00</span>
+                                <span class="menu-card-price">$27.00</span>
+                            </div>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Fujisan Roll" class="menu-card-img" src="img/sushi3.jpg" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <h5 class="menu-card-name">Nigiri Salmon</h5>
+                            <span class="menu-card-price">$30.00</span>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Nigiri Salmon" class="menu-card-img" src="img/sushi-1.png" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="menu-card">
+                        <div class="menu-card-header">
+                            <h5 class="menu-card-name">Thai Roll</h5>
+                            <span class="menu-card-price">$38.00</span>
+                        </div>
+                        <a class="menu-card-add" href="#">Add to Cart</a>
+                        <img alt="Thai Roll" class="menu-card-img" src="img/sushi-4.png" />
+                        <p class="menu-card-desc">Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac
+                            turpis
+                            egestas ma</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section container">
+        <img alt="Detailed Sushi" class="parallax-img" src="img/img2.png" />
+        <div class="parallax-overlay">
+
+        </div>
+    </section>
+
+    <!-- Chefs Section -->
+    <section id="chefs" class="chefs-section container">
+        <div class="section-header">
+            <h2 class="section-title">Meet Our Chefs</h2>
+            <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut
+                enim ad minim veniam, quis nostrud</p>
+        </div>
+        <div class="chefs-grid">
+            <div class="chef-card">
+                <div class="chef-img-wrap">
+                    <img alt="Mateo Wolf" class="chef-img"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ujQRdmrbMtiAoQ3FdGW5Jl3pHPEh9c4_kJi_EtHw4gnEmF2BSwsMR6fRwQxAs_MIHL7t57pAPke42QfB5XqM6uI24aYj6NI5-4JYHaVfQuocORHLH9xoa7lfWgYb8HGBJZEmPb-nsKlDYUJ5VSx-eFaKp5ySkxukO6ZOhnr9bjLndheCL5yiHrKg0sHosO3LszUu9OKhoiGJTbCd_B68KifARAaPpY3YWKfiD_RZuu3XY9GEeHMg9gLLf8" />
+                </div>
+                <h4 class="chef-name">Mateo Wolf</h4>
+                <p class="chef-role">Chef</p>
+            </div>
+            <div class="chef-card">
+                <div class="chef-img-wrap">
+                    <img alt="Farhan McKay" class="chef-img"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uhPj2b-seNp677ViGkSNlniZ4OsorphhaVmQr2mv4oHAQGwg_8tOemBtxBKx_FwROSXSRHd_53im9aDRU-MOEueIvm14lFnGx2Vw4FYqklaLUeBtay54mogfXQ5EWW4c17bcI1ZNkkIDjgrVxb22igXDIt1sijExkQxale3PODwRHJJvDMmVDUX_9qDqhFbNBTgZ2rOQu7CIGNCKZhi6vmEYiQIXD_SA0vQwVjHGkUrDGBL5HE3P2156_s" />
+                </div>
+                <h4 class="chef-name">Farhan Mckay</h4>
+                <p class="chef-role">Assistant Chef</p>
+            </div>
+            <div class="chef-card">
+                <div class="chef-img-wrap">
+                    <img alt="Dan Hamilton" class="chef-img"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uhZsXdcuTrOINzVqtQ7CZfrejRA75sPrIY8N7HnR9XPx1f-5cM-uUlA1O5WxLLaFTB1ruLkLfnite2ZPDcqpmam9_IB-WIVQ5uByZLJyFYC_NrYvKidQL3LF4htXOyWMQRkZx21gIJuTX0Q2qdZwKOHjVrRr-lAqrhjm11s2AdCeJMPweIf2rzEfddG1IFeHGEOPCTEnOJQ-fz4cADV-i4wWZIHocV4cHYW_V15QAdH2MhUej-sZ9pl8x8" />
+                </div>
+                <h4 class="chef-name">Dan Hamilton</h4>
+                <p class="chef-role">Chef</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Chef Section -->
+    <section class="lead-chef-section container">
+        <div class="lead-chef-grid">
+            <div class="lead-chef-img-wrap">
+                <video class="hero-video" src="img/v2.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="lead-chef-content">
+                <a class="navbar-brand" href="#">
+                    <img alt="Fidalgo Logo" class="logo-img" src="img/logo.png" />
+                </a>
+                <h2 class="lead-chef-title">AFRO Birmingham</h2>
+                <p class="lead-chef-desc">Catch a vibe and a full belly at Afro Birmingham. A vibrant dining spot known
+                    for
+                    its authentic Nigerian cuisine and lively ambiance. Experience bold flavors, beautifully crafted
+                    dishes,
+                    and an atmosphere that feels like home.</p>
+                <div class="about-content">
+                    <p>AFRO! Restaurant & Lounge is a black-owned African restaurant and lounge celebrating culture,
+                        flavor, and
+                        togetherness. We invite you to join us for birthday specials, date night vibes, or your regular
+                        night
+                        out with friends. Our menu features authentic Nigerian dishes including Ayamase, Egusi, Efo
+                        Riro,
+                        Seafood Okro, Jollof Rice, and more.</p>
+                    <p>With live music, expertly crafted cocktails, and an inviting interior, AFRO Birmingham is the
+                        perfect
+                        spot for a luxurious dining experience. Whether you're looking for halal eats or simply want to
+                        enjoy
+                        authentic African cuisine, we have something special waiting for you.</p>
+                </div>
+                <a class="btn btn-outline" href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section id="visit" class="visit-section container">
+        <div class="visit-grid">
+            <div class="visit-info">
+                <div class="visit-img-wrap">
+                    <img alt="Restaurant Internal" class="visit-img" src="img/logo.png" />
+                </div>
+                <h4 class="visit-title">Visit Us</h4>
+                <p class="visit-text">
+                    Join us at AFRO Birmingham for an unforgettable dining experience. We're open Tuesday through Sunday
+                    with extended hours on weekends.<br />
+
+                </p>
+
+                <div class="visit-info">
+                    <div class="info-card">
+                        <h5 class="visit-title">Location</h5>
+                        <p class="visit-text">77 Mott Street<br />Birmingham B19 3HE<br />United Kingdom</p>
+                    </div>
+                    <div class="info-card">
+                        <h5 class="visit-title">Hours</h5>
+                        <p class="visit-text">Tuesday - Friday: 5:00 PM - 2:00 AM<br />Saturday - Sunday: 12:00 PM -
+                            2:00 AM<br />Monday:
+                            Closed
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <h5 class="visit-title">Contact</h5>
+                        <p class="visit-text">Phone: +44 121 817 6999<br />Email: contact@afrolounge.info<br />Follow us
+                            @afrobirmingham
+                        </p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IN</a>
+                    <a href="#">PIN</a>
+                </div>
+            </div>
+            <div class="visit-map">
+                <img alt="Restaurant Atmosphere" class="visit-map-img" src="img/img1.png" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section ">
+        <div class="testimonials-wrap">
+            <span class="testimonials-label">They say about us</span>
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="testimonial-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodo con</p>
+                        <span class="testimonial-author">/ by Lee Byrne / Sushi Chef</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="testimonial-text">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur</p>
+                        <span class="testimonial-author">/ by Sarah Chen / Food Critic</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="testimonial-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum</p>
+                        <span class="testimonial-author">/ by Marco Rossi / Chef</span>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="instagram-section">
+        <div class="swiper instagram-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v1.mp4" muted loop playsinline autoplay></video>
+                </div>
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v2.mp4" muted loop playsinline autoplay></video>
+                </div>
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v3.mp4" muted loop playsinline autoplay></video>
+                </div>
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v4.mp4" muted loop playsinline autoplay></video>
+                </div>
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v5.mp4" muted loop playsinline autoplay></video>
+                </div>
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v6.mp4" muted loop playsinline autoplay></video>
+                </div>
+                <div class="swiper-slide instagram-item">
+                    <video src="img/v7.mp4" muted loop playsinline autoplay></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>Contact Us</h5>
+                <p>T. +12 344 0567899<br />M. fidalgo@example.com</p>
+            </div>
+            <div class="footer-col">
+                <h5>Address</h5>
+                <p>Piazza Della Signoria, 12<br />21562 . Firenze . Italy</p>
+            </div>
+            <div class="footer-col">
+                <h5>Opening Hours</h5>
+                <p>Everyday : From 12.30 To 23.00<br />Kitchen Closes At 22.00</p>
+            </div>
+        </div>
+        <div class="footer-brand">
+            <img alt="Fidalgo Logo Footer" class="footer-logo" src="img/logo.png" />
+            <div class="footer-social">
+                <a href="#">Pinterest</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Qode Interactive, All Rights Reserved</p>
+            <button id="scrollTop">Top</button>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
