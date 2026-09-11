@@ -1,5 +1,5 @@
 /* ============================================
-   TOPPINO'S PIZZERIA — DESIGN SYSTEM
+   TOPPINO'S PIZZERIA  DESIGN SYSTEM
    Warm Neapolitan/Turkish brick-oven café identity.
    Palette sampled from the real supplied logo.
    ============================================ */
@@ -284,7 +284,7 @@ color: var(--cream);}
 .offcanvas-social a:hover { background: var(--terracotta); border-color: var(--terracotta); }
 
 /* ============================================
-   ARCH MEDIA — signature visual motif
+   ARCH MEDIA  signature visual motif
    Rounded-top / flat-bottom frame nodding to both
    a Neapolitan oven mouth and a Turkish archway.
    ============================================ */
@@ -380,7 +380,7 @@ color: var(--cream);}
 .on-pine .section-lede { color: rgba(248,239,223,0.75); }
 
 /* ============================================
-   HOME — HERO
+   HOME  HERO
    ============================================ */
 
 .hero {
@@ -595,7 +595,7 @@ color: var(--cream);}
 }
 
 /* ============================================
-   REVIEWS / SOCIAL PROOF (honest — no fabricated quotes)
+   REVIEWS / SOCIAL PROOF (honest  no fabricated quotes)
    ============================================ */
 
 .reviews-card {
@@ -849,7 +849,7 @@ color: var(--cream);}
     color: var(--terracotta);
 }
 
-/* Sticky mobile action bar — for QR-scanning diners on the Menu page */
+/* Sticky mobile action bar  for QR-scanning diners on the Menu page */
 .mobile-action-bar {
     position: fixed;
     bottom: 0; left: 0; right: 0;

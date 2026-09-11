@@ -1,8 +1,8 @@
 /* ============================================
-   TOPPINO'S PIZZERIA — SITE DATA
+   TOPPINO'S PIZZERIA  SITE DATA
    Single source of truth for business info + menu.
    Edit this file to update contact details, hours,
-   or any menu item/price — no HTML changes needed.
+   or any menu item/price  no HTML changes needed.
    ============================================ */
 
 const SITE = {
@@ -14,19 +14,19 @@ const SITE = {
         line2: "PRL Colony, Thaltej, Ahmedabad, Gujarat 380059",
         full: "Near Ornet Park, 3, Sindhu Bhavan Marg, PRL Colony, Thaltej, Ahmedabad, Gujarat 380059, India"
     },
-    // PLACEHOLDER — replace with the real number before launch (brief: phone/WhatsApp still being finalized)
+    // PLACEHOLDER  replace with the real number before launch (brief: phone/WhatsApp still being finalized)
     phoneDisplay: "+91 90000 00000",
     phoneTel: "+919000000000",
     whatsappNumber: "919000000000",
-    // PLACEHOLDER — brief recommends hello@toppinospizzeria.in as the primary address
+    // PLACEHOLDER  brief recommends hello@toppinospizzeria.in as the primary address
     email: "hello@toppinospizzeria.in",
-    // PLACEHOLDER — Instagram account is still being prepared per brief
+    // PLACEHOLDER  Instagram account is still being prepared per brief
     instagramHandle: "@toppinospizzeria",
     instagramUrl: "https://instagram.com/toppinospizzeria",
     googleReviewUrl: "https://www.google.com/search?q=Toppino%27s+Pizzeria+Thaltej+Ahmedabad",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Toppino's Pizzeria, Near Ornet Park, 3, Sindhu Bhavan Marg, PRL Colony, Thaltej, Ahmedabad, Gujarat 380059"),
     mapsEmbedQuery: encodeURIComponent("Near Ornet Park, Sindhu Bhavan Marg, PRL Colony, Thaltej, Ahmedabad, Gujarat 380059"),
-    // PLACEHOLDER — final opening hours still being confirmed per brief
+    // PLACEHOLDER  final opening hours still being confirmed per brief
     hours: [
         { days: "Monday – Friday", time: "12:00 PM – 11:00 PM" },
         { days: "Saturday – Sunday", time: "11:00 AM – 11:30 PM" }
@@ -42,7 +42,7 @@ function waLink(prefill) {
    MENU DATA
    NOTE: This is a realistic placeholder menu.
    Per the design brief, only "wood-fired pizza" and
-   "Turkish breads/pide" are confirmed categories —
+   "Turkish breads/pide" are confirmed categories 
    exact dishes, descriptions and prices must be
    replaced once the head chef finalizes the real menu.
    ============================================ */
@@ -128,7 +128,7 @@ const MENU = [
     {
         id: "morning",
         title: "Morning & Salads",
-        subtitle: "Lighter plates — timing to be confirmed",
+        subtitle: "Lighter plates  timing to be confirmed",
         icon: "leaf",
         items: [
             {

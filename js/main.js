@@ -1,5 +1,5 @@
 /* ============================================
-   TOPPINO'S PIZZERIA — MAIN JS
+   TOPPINO'S PIZZERIA  MAIN JS
    Requires js/site-data.js to be loaded first.
    ============================================ */
 
@@ -78,7 +78,7 @@ function renderMenuPreview(containerId, limit = 4) {
         <div class="dish-card fade-in">
             <div class="arch-media ratio-square">
                 ${item.signature ? '<span class="dish-signature-tag">Signature</span>' : ''}
-                <img src="${item.img}" alt="${item.name} — Toppino's Pizzeria" loading="lazy">
+                <img src="${item.img}" alt="${item.name}  Toppino's Pizzeria" loading="lazy">
             </div>
             <div class="dish-card-body">
                 <div class="dish-card-top">
@@ -119,7 +119,7 @@ function renderMenuCategories(containerId) {
                 <div class="menu-grid">
                     ${cat.items.map(item => `
                         <div class="menu-item-card fade-in">
-                            <img src="${item.img}" alt="${item.name} — Toppino's Pizzeria" loading="lazy">
+                            <img src="${item.img}" alt="${item.name}  Toppino's Pizzeria" loading="lazy">
                             <div class="menu-item-info">
                                 <div class="menu-item-line">
                                     <span class="name">${item.name}</span>
@@ -192,7 +192,7 @@ function initContactForm() {
         const message = form.querySelector('[name="message"]').value.trim();
 
         const subject = encodeURIComponent(`Website enquiry from ${name}`);
-        const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+        const body = encodeURIComponent(`${message}\n\n ${name} (${email})`);
         window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
         trackEvent('contact_form_submit', name);
     });
