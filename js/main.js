@@ -1,257 +1,253 @@
 /* ============================================
-   MOON SUSHI - MAIN JAVASCRIPT
+   TOPPINO'S PIZZERIA — MAIN JS
+   Requires js/site-data.js to be loaded first.
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', function () {
+function resolvePath(obj, path) {
+    return path.split('.').reduce((acc, key) => (acc == null ? acc : acc[key]), obj);
+}
 
-    // ============================================
-    // SWIPER INITIALIZATION - Testimonials
-    // ============================================
-    const testimonialSwiper = new Swiper('.testimonial-swiper', {
-        loop: true,
-        speed: 800,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        }
+/* ---- fill in contact/business info wherever it's referenced ---- */
+function applySiteData() {
+    document.querySelectorAll('[data-site-text]').forEach(el => {
+        const val = resolvePath(SITE, el.getAttribute('data-site-text'));
+        if (val != null) el.textContent = val;
     });
 
-    // ============================================
-    // SWIPER INITIALIZATION - Instagram Gallery
-    // ============================================
-    const instagramSwiper = new Swiper('.instagram-swiper', {
-        loop: true,
-        loopedSlides: 5,
-        speed: 3000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-        },
-        slidesPerView: 'auto',
-        spaceBetween: 2,
-        freeMode: false,          // ← remove freeMode, it breaks delay:0
-        allowTouchMove: false,    // ← prevents user dragging from stopping it
-        grabCursor: false,
-        on: {
-            init() {
-                document.querySelectorAll('.instagram-item video').forEach(v => v.play());
-            },
-            loopFix() {
-                document.querySelectorAll('.instagram-item video').forEach(v => v.play());
-            }
-        }
-    });
-
-    document.querySelectorAll('.instagram-item video').forEach(v => v.play());
-
-    // ============================================
-    // SWIPER INITIALIZATION - Menu
-    // ============================================
-    const menuSwiper = new Swiper('.menu-swiper', {
-        loop: true,
-        speed: 600,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        slidesPerView: 'auto',
-        spaceBetween: 24,
-        centeredSlides: true,
-        grabCursor: true,
-        pagination: {
-            el: '.menu-swiper .swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 4, centeredSlides: false },
-        },
-    });
-
-    // ============================================
-    // SCROLL TO TOP
-    // ============================================
-    const scrollTopBtn = document.getElementById('scrollTop');
-    if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    // ============================================
-    // NAVBAR BACKGROUND ON SCROLL
-    // ============================================
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', function () {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            navbar.style.backdropFilter = 'blur(10px)';
-        } else {
-            navbar.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.7), transparent)';
-            navbar.style.backdropFilter = 'none';
-        }
-
-        lastScroll = currentScroll;
-    });
-
-    // ============================================
-    // SMOOTH SCROLL FOR ANCHOR LINKS
-    // ============================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-
-                // Close offcanvas if open
-                const offcanvas = document.getElementById('offcanvasMenu');
-                const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
-                if (bsOffcanvas) {
-                    bsOffcanvas.hide();
-                }
-            }
-        });
-    });
-
-    // ============================================
-    // RESERVATION FORM HANDLER
-    // ============================================
-    const reservationForm = document.querySelector('.reservation-form');
-    const successOverlay = document.getElementById('reservationSuccess');
-    const successCloseBtn = document.getElementById('successCloseBtn');
-
-    if (reservationForm && successOverlay) {
-        reservationForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            console.log('Reservation submitted');
-
-            // Show the success overlay
-            successOverlay.classList.add('active');
-        });
-
-        // Close overlay & reset form
-        if (successCloseBtn) {
-            successCloseBtn.addEventListener('click', function () {
-                successOverlay.classList.remove('active');
-                reservationForm.reset();
-
-                // Reset SVG animations so they replay next time
-                setTimeout(() => {
-                    const circle = successOverlay.querySelector('.checkmark-circle');
-                    const check = successOverlay.querySelector('.checkmark-check');
-                    const title = successOverlay.querySelector('.success-title');
-                    const msg = successOverlay.querySelector('.success-message');
-                    const btn = successOverlay.querySelector('.success-close-btn');
-
-                    // Force re-trigger by cloning
-                    [circle, check].forEach(el => {
-                        if (el) {
-                            const clone = el.cloneNode(true);
-                            el.parentNode.replaceChild(clone, el);
-                        }
-                    });
-
-                    // Reset opacity on text elements
-                    [title, msg, btn].forEach(el => {
-                        if (el) {
-                            el.style.opacity = '0';
-                            el.style.transform = 'translateY(12px)';
-                            // Force reflow then clear inline styles
-                            requestAnimationFrame(() => {
-                                el.style.removeProperty('opacity');
-                                el.style.removeProperty('transform');
-                            });
-                        }
-                    });
-                }, 500); // Wait for overlay fade-out
-            });
-        }
-    }
-
-    // ============================================
-    // ADD TO CART HANDLER
-    // ============================================
-    document.querySelectorAll('.menu-card-add').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const card = this.closest('.menu-card');
-            const itemName = card.querySelector('.menu-card-name').textContent;
-            alert(itemName + ' added to cart!');
-        });
-    });
-
-    // ============================================
-    // HERO SLIDER DOTS (Visual only - can be expanded)
-    // ============================================
-    const dots = document.querySelectorAll('.hero-pagination .dot');
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function () {
-            dots.forEach(d => d.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
-    // ============================================
-    // INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS
-    // ============================================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+    const hrefMap = {
+        tel: 'tel:' + SITE.phoneTel,
+        whatsapp: waLink("Hi Toppino's! I'd like to know more."),
+        whatsappMenu: waLink("Hi Toppino's! I have a question about the menu."),
+        email: 'mailto:' + SITE.email,
+        instagram: SITE.instagramUrl,
+        directions: SITE.directionsUrl,
+        googleReview: SITE.googleReviewUrl
     };
+    document.querySelectorAll('[data-site-href]').forEach(el => {
+        const key = el.getAttribute('data-site-href');
+        if (hrefMap[key]) el.href = hrefMap[key];
+    });
 
-    const observer = new IntersectionObserver((entries) => {
+    document.querySelectorAll('[data-site-year]').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+}
+
+function renderHours(containerId) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = SITE.hours.map(h => `
+        <div class="info-row">
+            <p style="flex:1"><strong>${h.days}</strong></p>
+            <p>${h.time}</p>
+        </div>
+    `).join('') + `<p style="font-size:0.72rem;color:var(--ink-soft);margin-top:0.75rem;font-style:italic;">${SITE.hoursNote}</p>`;
+}
+
+/* ---- analytics stub: fires gtag() if it's ever wired in, otherwise no-ops ---- */
+function trackEvent(action, label) {
+    if (typeof gtag === 'function') {
+        gtag('event', action, { event_label: label || '' });
+    }
+}
+function initEventTracking() {
+    document.querySelectorAll('[data-track]').forEach(el => {
+        el.addEventListener('click', () => trackEvent(el.getAttribute('data-track'), el.href || el.textContent));
+    });
+}
+
+/* ---- money formatting ---- */
+function rupee(n) {
+    return '₹' + n;
+}
+
+/* ---- home page: menu preview (signature dishes across categories) ---- */
+function renderMenuPreview(containerId, limit = 4) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    const picks = [];
+    MENU.forEach(cat => cat.items.forEach(item => { if (item.signature) picks.push(item); }));
+    MENU.forEach(cat => {
+        if (picks.length >= limit) return;
+        const fallback = cat.items.find(item => !picks.includes(item));
+        if (fallback) picks.push(fallback);
+    });
+    const finalPicks = picks.slice(0, limit);
+
+    el.innerHTML = finalPicks.map(item => `
+        <div class="dish-card fade-in">
+            <div class="arch-media ratio-square">
+                ${item.signature ? '<span class="dish-signature-tag">Signature</span>' : ''}
+                <img src="${item.img}" alt="${item.name} — Toppino's Pizzeria" loading="lazy">
+            </div>
+            <div class="dish-card-body">
+                <div class="dish-card-top">
+                    <span class="dish-name">${item.name}</span>
+                    <span class="dish-price">${rupee(item.price)}</span>
+                </div>
+                <p class="dish-desc">${item.desc}</p>
+            </div>
+        </div>
+    `).join('');
+    observeFadeIns(el);
+}
+
+/* ---- menu page: full category-by-category menu + tabs ---- */
+const ICONS = { flame: 'fa-fire', bread: 'fa-bread-slice', leaf: 'fa-leaf', cup: 'fa-mug-hot' };
+
+function renderMenuTabs(containerId) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = MENU.map((cat, i) => `
+        <a href="#${cat.id}" class="menu-tab${i === 0 ? ' active' : ''}" data-tab="${cat.id}">${cat.title}</a>
+    `).join('');
+}
+
+function renderMenuCategories(containerId) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = MENU.map(cat => `
+        <section id="${cat.id}" class="menu-category">
+            <div class="wrap">
+                <div class="menu-category-head fade-in">
+                    <div class="menu-category-icon"><i class="fa-solid ${ICONS[cat.icon] || 'fa-utensils'}"></i></div>
+                    <div>
+                        <h2>${cat.title}</h2>
+                        <p>${cat.subtitle}</p>
+                    </div>
+                </div>
+                <div class="menu-grid">
+                    ${cat.items.map(item => `
+                        <div class="menu-item-card fade-in">
+                            <img src="${item.img}" alt="${item.name} — Toppino's Pizzeria" loading="lazy">
+                            <div class="menu-item-info">
+                                <div class="menu-item-line">
+                                    <span class="name">${item.name}</span>
+                                    <span class="leader"></span>
+                                    <span class="price">${rupee(item.price)}</span>
+                                </div>
+                                <p class="menu-item-desc">${item.desc}</p>
+                                ${item.signature ? '<span class="menu-item-sig">Signature Dish</span>' : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </section>
+    `).join('');
+    observeFadeIns(el);
+}
+
+function initMenuTabScrollSpy() {
+    const tabs = document.querySelectorAll('.menu-tab');
+    const sections = MENU.map(c => document.getElementById(c.id)).filter(Boolean);
+    if (!tabs.length || !sections.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+        });
+    });
+
+    const spy = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-visible');
+                tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === entry.target.id));
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
 
-    // Observe sections for animation
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
+    sections.forEach(s => spy.observe(s));
+}
+
+/* ---- fade-in-on-scroll ---- */
+let fadeObserver;
+function observeFadeIns(scope) {
+    if (!fadeObserver) {
+        fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }
+    const root = scope || document;
+    root.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+}
+
+/* ---- contact form: mailto fallback (no backend in scope) ---- */
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const honeypot = form.querySelector('[name="company"]');
+        if (honeypot && honeypot.value) return; // bot caught by honeypot
+
+        const name = form.querySelector('[name="name"]').value.trim();
+        const email = form.querySelector('[name="email"]').value.trim();
+        const message = form.querySelector('[name="message"]').value.trim();
+
+        const subject = encodeURIComponent(`Website enquiry from ${name}`);
+        const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+        window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+        trackEvent('contact_form_submit', name);
+    });
+}
+
+/* ---- init everything ---- */
+document.addEventListener('DOMContentLoaded', function () {
+    applySiteData();
+    initEventTracking();
+    initContactForm();
+    observeFadeIns(document);
+
+    if (document.getElementById('menuPreviewGrid')) {
+        renderMenuPreview('menuPreviewGrid', 4);
+    }
+    if (document.getElementById('menuTabs')) {
+        renderMenuTabs('menuTabs');
+    }
+    if (document.getElementById('menuCategories')) {
+        renderMenuCategories('menuCategories');
+        initMenuTabScrollSpy();
+    }
+    if (document.getElementById('hoursList')) {
+        renderHours('hoursList');
+    }
+
+    // scroll-to-top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // navbar background on scroll
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        const updateNav = () => navbar.classList.toggle('is-scrolled', window.pageYOffset > 60);
+        window.addEventListener('scroll', updateNav);
+        updateNav();
+    }
+
+    // close offcanvas after clicking a link inside it
+    document.querySelectorAll('.offcanvas .nav-link, .offcanvas a[href^="#"]').forEach(link => {
+        link.addEventListener('click', () => {
+            const offcanvasEl = document.getElementById('offcanvasMenu');
+            const instance = offcanvasEl && bootstrap.Offcanvas.getInstance(offcanvasEl);
+            if (instance) instance.hide();
+        });
     });
 
+    // mark active nav link based on current page
+    const current = (location.pathname.split('/').pop() || 'index.html');
+    document.querySelectorAll('.nav-links a, .offcanvas-body .nav-link').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href === current || (current === '' && href === 'index.html')) {
+            a.classList.add('active');
+        }
+    });
 });
-
-// ============================================
-// FADE-IN ANIMATION STYLES (injected via JS)
-// ============================================
-const style = document.createElement('style');
-style.textContent = `
-    .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-in-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);

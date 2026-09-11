@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us | Toppino's Pizzeria</title>
+    <meta name="description" content="Get in touch with Toppino's Pizzeria — call, WhatsApp, email, or send us a quick enquiry." />
+    <link rel="canonical" href="https://toppinospizzeria.in/contact.html" />
+    <meta property="og:title" content="Contact Us | Toppino's Pizzeria" />
+    <meta property="og:description" content="Call, WhatsApp, email, or send us a quick enquiry." />
+    <meta property="og:image" content="https://toppinospizzeria.in/img/pizza-margherita-whole.webp" />
+    <meta property="og:url" content="https://toppinospizzeria.in/contact.html" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="wrap navbar-inner">
+            <a class="brand" href="index.html">
+                <img src="img/logo.png" class="brand-logo" alt="Toppino's Pizzeria logo" />
+                <span class="brand-text">Toppino's<small>Neapolitana Pizzeria</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="visit.html">Visit Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="franchise.html">Franchise</a>
+            </div>
+            <a href="menu.html" class="btn btn-terracotta btn-sm nav-cta" data-track="nav_view_menu">View Menu</a>
+            <button class="btn menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-label="Open menu">
+                <div class="hamburger"><span></span><span></span></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column" style="list-style:none;">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="menu.html">Menu</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="visit.html">Visit Us</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                <li><a class="nav-link" href="franchise.html">Franchise</a></li>
+            </ul>
+            <div class="offcanvas-social">
+                <a href="#" data-site-href="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" data-site-href="tel" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <header class="page-banner" style="background-image:url('img/pizza-slice-moody.webp');">
+        <div class="wrap page-banner-inner">
+            <span class="eyebrow">Get In Touch</span>
+            <h1>We'd Love to Hear From You</h1>
+            <p>Questions, feedback, or planning a visit — reach us however's easiest.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="contact-grid">
+                <a href="#" class="contact-card" data-site-href="tel" data-track="contact_call">
+                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                    <h4>Call Us</h4>
+                    <p data-site-text="phoneDisplay"></p>
+                </a>
+                <a href="#" class="contact-card" data-site-href="whatsapp" target="_blank" rel="noopener" data-track="contact_whatsapp">
+                    <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h4>WhatsApp</h4>
+                    <p data-site-text="phoneDisplay"></p>
+                </a>
+                <a href="#" class="contact-card" data-site-href="email" data-track="contact_email">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h4>Email</h4>
+                    <p data-site-text="email"></p>
+                </a>
+                <a href="#" class="contact-card" data-site-href="instagram" target="_blank" rel="noopener" data-track="contact_instagram">
+                    <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                    <h4>Instagram</h4>
+                    <p data-site-text="instagramHandle"></p>
+                </a>
+            </div>
+
+            <div class="contact-form-wrap">
+                <div class="section-head center" style="margin-bottom:2rem;">
+                    <span class="eyebrow">Send an Enquiry</span>
+                    <h2 class="section-title" style="font-size:1.6rem;">Drop Us a Line</h2>
+                </div>
+                <form id="contactForm">
+                    <!-- honeypot field — hidden from real visitors, catches basic bots -->
+                    <div class="form-group form-honeypot" aria-hidden="true">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-terracotta btn-block">Send Enquiry</button>
+                </form>
+                <p class="form-note">This opens your email app with your message pre-filled. For the fastest response, call or WhatsApp us directly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="img/logo.png" alt="Toppino's Pizzeria logo" />
+                        <span>Toppino's</span>
+                    </div>
+                    <p>Brick-oven Neapolitan pizza meets Turkish hospitality, in the heart of Thaltej, Ahmedabad.</p>
+                    <div class="footer-order-pills">
+                        <span class="footer-order-pill">Zomato — Coming Soon</span>
+                        <span class="footer-order-pill">Swiggy — Coming Soon</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Explore</h5>
+                    <a href="menu.html">Menu</a>
+                    <a href="about.html">About Us</a>
+                    <a href="visit.html">Visit Us</a>
+                    <a href="franchise.html">Franchise</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <a href="#" data-site-href="tel" data-site-text="phoneDisplay" data-track="footer_call"></a>
+                    <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" data-track="footer_whatsapp">WhatsApp Us</a>
+                    <a href="#" data-site-href="email" data-site-text="email" data-track="footer_email"></a>
+                </div>
+                <div class="footer-col">
+                    <h5>Visit</h5>
+                    <p data-site-text="address.full"></p>
+                    <a href="#" data-site-href="directions" target="_blank" rel="noopener" data-track="footer_directions">Get Directions →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span data-site-year></span> Toppino's Pizzeria. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" data-site-href="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" data-site-href="googleReview" target="_blank" rel="noopener" aria-label="Google Reviews"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <button id="scrollTop">Back to top ↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
