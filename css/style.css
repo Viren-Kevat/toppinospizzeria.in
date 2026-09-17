@@ -506,7 +506,7 @@ color: var(--cream);}
 .dish-card {
     background: var(--cream-card);
     border: 1px solid var(--line);
-    border-radius: 4px 4px 14px 14px;
+    border-radius:45% 45% 0 0 / 22% 22% 0 0;
     overflow: hidden;
     box-shadow: var(--shadow);
     display: flex;
@@ -550,7 +550,7 @@ color: var(--cream);}
 }
 .dish-signature-tag {
     position: absolute;
-    top: 0.85rem; left: 0.85rem;
+    bottom: 0.85rem; left: 0.85rem;
     background: var(--terracotta);
     color: #fff;
     font-size: 0.6rem;
@@ -816,37 +816,65 @@ color: var(--cream);}
 .menu-item-card {
     position: relative;
     display: flex;
-    gap: 1.1rem;
+    flex-direction: column;
     background: var(--cream-card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 1rem;
-    box-shadow: var(--shadow);
+    border-radius: 4px 4px 14px 14px;
+    overflow: hidden;
+    /* box-shadow: var(--shadow); */
+    transition: transform 0.3s ease;
+    border-radius: 45% 45% 0 0 / 22% 22% 0 0;
 }
-.menu-item-card img {
-    width: 5.5rem; height: 5.5rem;
-    border-radius: 45% 45% 12% 12%;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-.menu-item-info { flex: 1; min-width: 0; }
+.menu-item-card:hover { transform: translateY(-4px); }
+.menu-item-card .arch-media { border-radius: 45% 45% 0 0 / 22% 22% 0 0; }
+.menu-item-info { flex: 1; min-width: 0; padding: 1.1rem 1.25rem 1.4rem; }
 .menu-item-line {
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
 }
-.menu-item-line .name { font-weight: 700; font-size: 0.95rem; }
+.menu-item-line .name { font-weight: 700; font-size: 1rem; }
 .menu-item-line .leader { flex: 1; border-bottom: 1px dotted var(--line); transform: translateY(-3px); }
 .menu-item-line .price { color: var(--terracotta); font-weight: 700; font-family: 'Fraunces', serif; white-space: nowrap; }
-.menu-item-desc { font-size: 0.8rem; color: var(--ink-soft); margin-top: 0.35rem; }
-.menu-item-sig {
-    display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 0.6rem;
+.menu-item-desc { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.4rem; line-height: 1.45; }
+
+.credits-list { margin-top: 2rem; }
+.credit-group { margin-bottom: 2.25rem; }
+.credit-group h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--pine-dark);
+}
+.credit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+.credit-row:last-child { border-bottom: none; }
+.credit-dish { font-weight: 600; }
+.credit-info { color: var(--ink-soft); }
+.credit-info a { color: var(--terracotta); }
+
+.menu-item-jain {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-left: 0.4rem;
+    border: 1px solid var(--pine);
+    color: var(--pine);
+    font-size: 0.55rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--terracotta);
+    border-radius: 2px;
+    vertical-align: middle;
+    transform: translateY(-1px);
 }
 
 /* Sticky mobile action bar  for QR-scanning diners on the Menu page */

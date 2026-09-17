@@ -65,8 +65,19 @@ function rupee(n) {
 function renderMenuPreview(containerId, limit = 4) {
     const el = document.getElementById(containerId);
     if (!el) return;
+    // Prefer pizza & pide signature dishes first, since the homepage hero
+    // copy specifically promises "pizze and pide" - then fill any
+    // remaining slots with other signature items, then any items at all.
+    const preferredCatIds = ['pizza-indian', 'pizza-classic', 'pizza-white', 'pizza-specialty', 'pide'];
     const picks = [];
-    MENU.forEach(cat => cat.items.forEach(item => { if (item.signature) picks.push(item); }));
+    preferredCatIds.forEach(id => {
+        const cat = MENU.find(c => c.id === id);
+        if (!cat) return;
+        cat.items.forEach(item => { if (item.signature && picks.length < limit) picks.push(item); });
+    });
+    MENU.forEach(cat => cat.items.forEach(item => {
+        if (item.signature && !picks.includes(item) && picks.length < limit) picks.push(item);
+    }));
     MENU.forEach(cat => {
         if (picks.length >= limit) return;
         const fallback = cat.items.find(item => !picks.includes(item));
@@ -93,7 +104,11 @@ function renderMenuPreview(containerId, limit = 4) {
 }
 
 /* ---- menu page: full category-by-category menu + tabs ---- */
-const ICONS = { flame: 'fa-fire', bread: 'fa-bread-slice', leaf: 'fa-leaf', cup: 'fa-mug-hot' };
+const ICONS = {
+    flame: 'fa-fire', bread: 'fa-bread-slice', leaf: 'fa-leaf', cup: 'fa-mug-hot',
+    soup: 'fa-bowl-food', mezze: 'fa-utensils', calzone: 'fa-circle-half-stroke',
+    pasta: 'fa-bowl-rice', grill: 'fa-fire-burner', dessert: 'fa-cookie-bite', cold: 'fa-martini-glass-citrus'
+};
 
 function renderMenuTabs(containerId) {
     const el = document.getElementById(containerId);
@@ -119,15 +134,17 @@ function renderMenuCategories(containerId) {
                 <div class="menu-grid">
                     ${cat.items.map(item => `
                         <div class="menu-item-card fade-in">
-                            <img src="${item.img}" alt="${item.name}  Toppino's Pizzeria" loading="lazy">
+                            <div class="arch-media ratio-square">
+                                ${item.signature ? '<span class="dish-signature-tag">Signature</span>' : ''}
+                                <img src="${item.img}" alt="${item.name}  Toppino's Pizzeria" loading="lazy">
+                            </div>
                             <div class="menu-item-info">
                                 <div class="menu-item-line">
-                                    <span class="name">${item.name}</span>
+                                    <span class="name">${item.name}${item.jain ? '<span class="menu-item-jain" title="Jain option available on request">J</span>' : ''}</span>
                                     <span class="leader"></span>
                                     <span class="price">${rupee(item.price)}</span>
                                 </div>
                                 <p class="menu-item-desc">${item.desc}</p>
-                                ${item.signature ? '<span class="menu-item-sig">Signature Dish</span>' : ''}
                             </div>
                         </div>
                     `).join('')}
@@ -136,6 +153,20 @@ function renderMenuCategories(containerId) {
         </section>
     `).join('');
     observeFadeIns(el);
+}
+
+/* ---- menu tabs: let a plain vertical mouse wheel scroll the horizontal strip ----
+   The scrollable element is the outer .menu-tabs (overflow-x:auto), not the
+   #menuTabs div that renderMenuTabs fills - that's just its inline-flex content. */
+function initMenuTabsWheelScroll() {
+    const el = document.querySelector('.menu-tabs');
+    if (!el) return;
+    el.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return; // let native horizontal gestures pass through
+        if (el.scrollWidth <= el.clientWidth) return; // nothing to scroll
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+    }, { passive: false });
 }
 
 function initMenuTabScrollSpy() {
@@ -178,7 +209,12 @@ function observeFadeIns(scope) {
     root.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 }
 
-/* ---- contact form: mailto fallback (no backend in scope) ---- */
+/* ---- contact form: hands off to WhatsApp (no backend in scope) ----
+   WhatsApp deliberately requires the sender to tap Send themselves -
+   there's no way to deliver a message with zero taps without the
+   paid Business Cloud API and a backend. This pre-fills everything
+   and opens the chat with Toppino's own number so the visitor only
+   has to hit Send once. */
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -191,9 +227,8 @@ function initContactForm() {
         const email = form.querySelector('[name="email"]').value.trim();
         const message = form.querySelector('[name="message"]').value.trim();
 
-        const subject = encodeURIComponent(`Website enquiry from ${name}`);
-        const body = encodeURIComponent(`${message}\n\n ${name} (${email})`);
-        window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+        const prefill = `New website enquiry\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        window.open(waLink(prefill), '_blank', 'noopener');
         trackEvent('contact_form_submit', name);
     });
 }
@@ -210,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (document.getElementById('menuTabs')) {
         renderMenuTabs('menuTabs');
+        initMenuTabsWheelScroll();
     }
     if (document.getElementById('menuCategories')) {
         renderMenuCategories('menuCategories');

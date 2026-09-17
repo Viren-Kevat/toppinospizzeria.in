@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Toppino's — Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #163629;
+    --forest-2: #1f4a37;
+    --beige: #f3ead6;
+    --beige-2: #ecdfc2;
+    --gold: #a97c3f;
+    --gold-light: #c99c5c;
+    --ink: #241d12;
+    --muted: #6c5f45;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--beige);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .frame {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--beige);
+    border: 1px solid var(--gold);
+    border-width: 0 1px;
+  }
+
+  header.crest-band {
+    background: var(--forest);
+    background-image: radial-gradient(circle at 50% 0%, var(--forest-2), var(--forest) 70%);
+    text-align: center;
+    padding: 56px 24px 0;
+    position: relative;
+  }
+
+  header.crest-band::after {
+    content: "";
+    display: block;
+    height: 3px;
+    margin: 0 auto;
+    max-width: 780px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  }
+
+  .logo-seal {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 6px var(--forest), 0 0 0 8px var(--gold-light), 0 18px 30px rgba(0,0,0,0.35);
+    margin-bottom: -60px;
+    position: relative;
+    top: 30px;
+    background: var(--beige);
+  }
+
+  .brand-sub {
+    padding: 70px 20px 30px;
+    color: var(--beige);
+  }
+
+  .brand-sub .eyebrow {
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: var(--gold-light);
+    margin: 0 0 6px;
+  }
+
+  .brand-sub h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 46px;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  .brand-sub .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--beige-2);
+    margin: 8px 0 0;
+  }
+
+  .veg-pill {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 6px 22px;
+    border: 1px solid var(--gold-light);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--forest);
+    background: var(--beige);
+  }
+
+  main {
+    padding: 10px 48px 20px;
+  }
+
+  .menu-section {
+    margin-top: 46px;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+
+  .section-heading .rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .section-heading .rule:last-child {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--forest);
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  .section-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    margin: 6px 0 18px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .item-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 18px;
+  }
+
+  .item-col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .item-col .item {
+    margin-bottom: 22px;
+  }
+
+  .item-col .item:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .flame {
+    color: var(--gold);
+    font-size: 12px;
+    margin-right: 4px;
+  }
+
+  .jain {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--forest-2);
+    color: var(--forest-2);
+    font-size: 9px;
+    font-family: 'Jost', sans-serif;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+  }
+
+  .leader {
+    flex: 1;
+    border-bottom: 1.5px dotted var(--gold-light);
+    margin-bottom: 4px;
+  }
+
+  .item-price {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .item-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  footer {
+    margin-top: 60px;
+    background: var(--forest);
+    text-align: center;
+    padding: 34px 20px 40px;
+    color: var(--beige-2);
+  }
+
+  footer .flame-divider {
+    color: var(--gold-light);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  footer .foot-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  footer .legend {
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 600px) {
+    .item-grid { flex-direction: column; gap: 0; }
+    main { padding: 10px 22px 20px; }
+    .brand-sub h1 { font-size: 34px; }
+    .logo-seal { width: 140px; height: 140px; margin-bottom: -40px; }
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="crest-band">
+      <img class="logo-seal" src="toppinos-logo.png" alt="Toppino's crest">
+    </header>
+    <div class="brand-sub" style="background: var(--forest);">
+      <p class="eyebrow">NAPOLI STYLE &middot; TURKISH &amp; ITALIAN &middot; WOOD FIRED</p>
+      <h1>TOPPINO'S</h1>
+      <p class="tagline">Neapolitana Pizzeria</p>
+      <div class="veg-pill">100% VEGETARIAN &middot; JAIN OPTIONS MARKED (J)</div>
+    </div>
+    <main>
+      
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Soups</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Sweet Corn Soup<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;165</span>
+          </div>
+          <div class="item-desc">Corn, vegetable stock, cornstarch, pepper</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Roasted Bell Pepper Soup<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;185</span>
+          </div>
+          <div class="item-desc">Roasted bell pepper, cream, garlic, herbs</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Tomato Basil<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;175</span>
+          </div>
+          <div class="item-desc">Tomato, basil, olive oil, cream</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Minestrone</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;195</span>
+          </div>
+          <div class="item-desc">Mixed vegetables, beans, pasta, herbs</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Cream of Mushroom</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;195</span>
+          </div>
+          <div class="item-desc">Mushroom, cream, butter, thyme</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Mercimek Corbasi<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;185</span>
+          </div>
+          <div class="item-desc">Red lentils, cumin, lemon, mint</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Ezogelin Soup<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;195</span>
+          </div>
+          <div class="item-desc">Red lentil, mint, sumac, rice</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Salads</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Greek-Style Salad<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;295</span>
+          </div>
+          <div class="item-desc">Feta, olives, cucumber, tomato, red onion, olive oil</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Mediterranean Chickpea Salad<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;275</span>
+          </div>
+          <div class="item-desc">Chickpea, cucumber, tomato, parsley, lemon dressing</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Caprese<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;315</span>
+          </div>
+          <div class="item-desc">Mozzarella, tomato, basil, balsamic glaze</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Rocket & Parmesan<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;295</span>
+          </div>
+          <div class="item-desc">Arugula, shaved parmesan, walnut, lemon vinaigrette</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Roasted Beetroot & Feta Salad</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;295</span>
+          </div>
+          <div class="item-desc">Beetroot, feta, walnut, greens</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Coban Salatasi<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;265</span>
+          </div>
+          <div class="item-desc">Cucumber, tomato, onion, parsley, lemon-olive oil</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Fattoush</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;275</span>
+          </div>
+          <div class="item-desc">Crisp greens, radish, toasted pita, sumac dressing</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Starters &amp; Mezze</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Cheese Garlic Bread<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;225</span>
+          </div>
+          <div class="item-desc">Mozzarella, garlic butter, oregano, chilli flakes</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Loaded Nachos</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;345</span>
+          </div>
+          <div class="item-desc">Nachos, cheese sauce, salsa, sour cream, jalapeno</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Hummus with Pita<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;285</span>
+          </div>
+          <div class="item-desc">Chickpea, tahini, olive oil, warm pita</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Bruschetta<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;295</span>
+          </div>
+          <div class="item-desc">Toasted bread, tomato, basil, garlic, mozzarella</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Falafel Platter<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;315</span>
+          </div>
+          <div class="item-desc">Falafel, tahini, pickled salad, pita</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Borek<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;295</span>
+          </div>
+          <div class="item-desc">Filo pastry, cheese, herbs</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Imam Bayildi</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;325</span>
+          </div>
+          <div class="item-desc">Baked eggplant, tomato, onion, olive oil</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Brick Oven Pizzas — Paneer &amp; Indian-Inspired</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="section-note">10" · Fired in our traditional brick oven</div>
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Paneer Tikka Pizza</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;525</span>
+          </div>
+          <div class="item-desc">Tikka paneer, onion, capsicum, garlic, fresh chilli, mozzarella</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Makhani Pizza</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;545</span>
+          </div>
+          <div class="item-desc">Makhani sauce, paneer, tomato, cashew, bell pepper, mozzarella</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Peri Peri Paneer</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;555</span>
+          </div>
+          <div class="item-desc">Paneer, peri peri sauce, onion, capsicum, mozzarella</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Tandoori Paneer Pizza</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;525</span>
+          </div>
+          <div class="item-desc">Tandoori sauce, paneer, red &amp; yellow pepper, onion, mozzarella</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Brick Oven Pizzas — Classic</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="section-note">10" · Fired in our traditional brick oven</div>
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Five Cheese<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;595</span>
+          </div>
+          <div class="item-desc">Mozzarella, cheddar, parmesan, feta, processed cheese blend</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Margherita<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;425</span>
+          </div>
+          <div class="item-desc">Tomato sauce, fresh mozzarella, basil, olive oil</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Veg Supreme<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;475</span>
+          </div>
+          <div class="item-desc">Bell pepper, onion, corn, olives, mozzarella</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Veggie Delight<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;495</span>
+          </div>
+          <div class="item-desc">Corn, olives, bell pepper, sundried tomato, mozzarella</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Hawaiian<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;505</span>
+          </div>
+          <div class="item-desc">Pineapple, corn, onion, tangy pizza sauce</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Aglio Olio Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;475</span>
+          </div>
+          <div class="item-desc">Garlic, olive oil, chilli flakes, parmesan</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Pesto Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;525</span>
+          </div>
+          <div class="item-desc">Basil pesto, cherry tomato, bocconcini</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Brick Oven Pizzas — White (Bianca)</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="section-note">10" · Fired in our traditional brick oven</div>
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Bianca al Funghi</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;625</span>
+          </div>
+          <div class="item-desc">Bechamel, mushroom, mozzarella, truffle oil</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Four Cheese White Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;615</span>
+          </div>
+          <div class="item-desc">Bechamel base, mozzarella, feta, parmesan, cheddar</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Bianca al Spinach<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;585</span>
+          </div>
+          <div class="item-desc">Bechamel, spinach, corn, mozzarella, chilli flakes</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Mushroom &amp; Truffle</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;665</span>
+          </div>
+          <div class="item-desc">Sauteed mushroom, truffle oil, mozzarella</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Brick Oven Pizzas — Specialty</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="section-note">10" · Fired in our traditional brick oven</div>
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Caprese Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;595</span>
+          </div>
+          <div class="item-desc">Mozzarella, roasted zucchini, tomato, bell pepper, balsamic glaze</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Spinach &amp; Ricotta Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;595</span>
+          </div>
+          <div class="item-desc">Tomato base, mozzarella, spinach, ricotta</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Pizza Marinara<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;555</span>
+          </div>
+          <div class="item-desc">Marinara sauce, minced garlic, mozzarella, basil</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Mediterranean Olive &amp; Feta Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;645</span>
+          </div>
+          <div class="item-desc">Tomato base, mozzarella, black olive, feta, red onion</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Sun-Dried Tomato &amp; Feta Pizza<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;595</span>
+          </div>
+          <div class="item-desc">Tomato base, mozzarella, sundried tomato, feta, basil</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Eggplant Parmesan Pizza</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;595</span>
+          </div>
+          <div class="item-desc">Roasted eggplant, tomato, mozzarella, parmesan</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Calzone</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="section-note">10" · Fired in our traditional brick oven</div>
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Veggie Fiesta<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;375</span>
+          </div>
+          <div class="item-desc">Black olives, corn, sundried tomato, capsicum, jalapeno, cheese</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Pesto Perfection<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;405</span>
+          </div>
+          <div class="item-desc">Basil pesto, bell pepper, cherry tomato, olive, cheese</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Mushroom Madness</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;415</span>
+          </div>
+          <div class="item-desc">Sauteed mushroom, garlic, thyme, onion, cheese</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Mediterranean Mashup<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;405</span>
+          </div>
+          <div class="item-desc">Red paprika, olive, onion, bell pepper, feta, mozzarella</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Pide — Turkish Flatbread</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="section-note">10", boat-shaped · Fired in our traditional brick oven</div>
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Paneer Pide</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;455</span>
+          </div>
+          <div class="item-desc">Spiced paneer, onion, bell pepper, mozzarella</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Cheese Pide<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;425</span>
+          </div>
+          <div class="item-desc">Boat-shaped dough, mozzarella, feta, herbs</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Vegetable Pide<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;435</span>
+          </div>
+          <div class="item-desc">Mixed vegetables, mozzarella, herbs</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Spinach Pide<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;435</span>
+          </div>
+          <div class="item-desc">Spinach, mozzarella, feta, olive oil</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Peynirli Pide<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;445</span>
+          </div>
+          <div class="item-desc">Feta, mozzarella, fresh herbs, chilli flakes</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Manti</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;465</span>
+          </div>
+          <div class="item-desc">Veg-stuffed dumplings, garlic yogurt, tomato butter</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Pastas</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Alfredo<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;355</span>
+          </div>
+          <div class="item-desc">Fettuccine, cream, white sauce, vegetables</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Arrabbiata<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;345</span>
+          </div>
+          <div class="item-desc">Penne, spicy tomato sauce, cherry tomato</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Aglio Olio<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;335</span>
+          </div>
+          <div class="item-desc">Spaghetti, garlic, olive oil, chilli flakes</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Veg Lasagna<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;395</span>
+          </div>
+          <div class="item-desc">Layered pasta, vegetables, bechamel, cheese</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Pesto Penne<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;375</span>
+          </div>
+          <div class="item-desc">Basil pesto, penne, parmesan, pine nuts</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Ravioli</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;425</span>
+          </div>
+          <div class="item-desc">Cheese-stuffed pasta pockets, garlic butter sauce</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Turkish Mains</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Paneer Adana Skewers</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;385</span>
+          </div>
+          <div class="item-desc">Spiced paneer skewers, grilled peppers</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Falafel Platter<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;345</span>
+          </div>
+          <div class="item-desc">Falafel, hummus, pickled vegetables, pita</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Grilled Halloumi<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;395</span>
+          </div>
+          <div class="item-desc">Char-grilled halloumi, herb oil, lemon</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Veg Iskender</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;365</span>
+          </div>
+          <div class="item-desc">Grilled vegetables, pita, tomato sauce, yogurt</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Desserts</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Baklava<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;245</span>
+          </div>
+          <div class="item-desc">Layered filo, nuts, honey syrup</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Kunefe<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;265</span>
+          </div>
+          <div class="item-desc">Shredded pastry, cheese, sugar syrup</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">New York Cheesecake<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;275</span>
+          </div>
+          <div class="item-desc">Baked cheesecake, berry compote</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Tiramisu</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;275</span>
+          </div>
+          <div class="item-desc">Coffee-soaked layers, mascarpone cream</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Sutlac<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;195</span>
+          </div>
+          <div class="item-desc">Baked rice pudding, cinnamon</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Panna Cotta<span class="jain" title="Jain available">J</span></span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;225</span>
+          </div>
+          <div class="item-desc">Vanilla-set cream, seasonal fruit coulis</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Hot Beverages</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Angara Coffee</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;165</span>
+          </div>
+          <div class="item-desc">Signature roasted coffee blend</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Turkish Tea (Cay)</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;120</span>
+          </div>
+          <div class="item-desc">Traditional black tea, tulip glass</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Turkish Coffee</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;165</span>
+          </div>
+          <div class="item-desc">Finely ground coffee, slow brewed</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Herbal Teas</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;140</span>
+          </div>
+          <div class="item-desc">Chamomile, mint, hibiscus</div>
+        </div></div>
+      </div>
+    </section>
+    <section class="menu-section">
+      <div class="section-heading">
+        <span class="rule"></span>
+        <h2>Cold Beverages</h2>
+        <span class="rule"></span>
+      </div>
+      
+      <div class="item-grid">
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name"><span class="flame">&#9733;</span>Mocktails</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;195</span>
+          </div>
+          <div class="item-desc">Rotating seasonal fruit &amp; herb combinations</div>
+        </div>
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Ayran</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;145</span>
+          </div>
+          <div class="item-desc">Chilled salted yogurt drink</div>
+        </div></div>
+        <div class="item-col">
+        <div class="item">
+          <div class="item-row">
+            <span class="item-name">Italian Cold Coffee</span>
+            <span class="leader"></span>
+            <span class="item-price">&#8377;185</span>
+          </div>
+          <div class="item-desc">Espresso, milk, ice</div>
+        </div></div>
+      </div>
+    </section>
+    </main>
+    <footer>
+      <div class="flame-divider">&#10022;</div>
+      <div class="foot-line">FRESH DOUGH &nbsp;&middot;&nbsp; MADE WITH LOVE &nbsp;&middot;&nbsp; BAKED TO PERFECTION</div>
+      <div class="legend">&#9733; HOUSE FAVOURITE &nbsp;&nbsp;&nbsp; J JAIN AVAILABLE ON REQUEST</div>
+    </footer>
+  </div>
+</body>
+</html>
