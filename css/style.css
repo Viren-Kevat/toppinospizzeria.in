@@ -253,8 +253,11 @@ color: var(--cream);}
 
 .offcanvas {
     background: var(--pine-deep-bg);
-    width: 300px;
     color: var(--cream);
+}
+/* id selector needed to outrank Bootstrap's .offcanvas.offcanvas-end width rule */
+#offcanvasMenu {
+    width: 80vw;
 }
 .offcanvas .btn-close { filter: invert(1) brightness(2); }
 
