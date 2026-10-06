@@ -68,7 +68,7 @@ function renderMenuPreview(containerId, limit = 4) {
     // Prefer pizza & pide signature dishes first, since the homepage hero
     // copy specifically promises "pizze and pide" - then fill any
     // remaining slots with other signature items, then any items at all.
-    const preferredCatIds = ['pizza-indian', 'pizza-classic', 'pizza-white', 'pizza-specialty', 'pide'];
+    const preferredCatIds = ['neapolitan-pizzas', 'turkish-pizza', 'turkish-pide', 'pasta'];
     const picks = [];
     preferredCatIds.forEach(id => {
         const cat = MENU.find(c => c.id === id);
