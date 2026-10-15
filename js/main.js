@@ -61,42 +61,40 @@ function rupee(n) {
     return '₹' + n;
 }
 
-/* ---- home page: menu preview (signature dishes across categories) ---- */
+/* ---- home page: menu preview ---- */
 function renderMenuPreview(containerId, limit = 4) {
     const el = document.getElementById(containerId);
     if (!el) return;
-    // Prefer pizza & pide signature dishes first, since the homepage hero
-    // copy specifically promises "pizze and pide" - then fill any
-    // remaining slots with other signature items, then any items at all.
-    const preferredCatIds = ['neapolitan-pizzas', 'turkish-pizza', 'turkish-pide', 'pasta'];
+    const preferredCatIds = ['neapolitan-pizzas', 'pasta', 'italian-toast'];
     const picks = [];
     preferredCatIds.forEach(id => {
         const cat = MENU.find(c => c.id === id);
         if (!cat) return;
-        cat.items.forEach(item => { if (item.signature && picks.length < limit) picks.push(item); });
+        cat.items.forEach(item => {
+            if (item.price != null && !item.variants && picks.length < limit) picks.push(item);
+        });
     });
-    MENU.forEach(cat => cat.items.forEach(item => {
-        if (item.signature && !picks.includes(item) && picks.length < limit) picks.push(item);
-    }));
     MENU.forEach(cat => {
         if (picks.length >= limit) return;
-        const fallback = cat.items.find(item => !picks.includes(item));
-        if (fallback) picks.push(fallback);
+        cat.items.forEach(item => {
+            if (item.price != null && !item.variants && !picks.includes(item) && picks.length < limit) picks.push(item);
+        });
     });
     const finalPicks = picks.slice(0, limit);
 
     el.innerHTML = finalPicks.map(item => `
         <div class="dish-card fade-in">
-            <div class="arch-media ratio-square">
-                ${item.signature ? '<span class="dish-signature-tag">Signature</span>' : ''}
-                <img src="${item.img}" alt="${item.name}  Toppino's Pizzeria" loading="lazy">
-            </div>
+            ${item.img ? `
+                <div class="menu-item-photo">
+                    <img src="${item.img}" alt="Photo for ${item.name}" loading="lazy">
+                </div>
+            ` : ''}
             <div class="dish-card-body">
                 <div class="dish-card-top">
                     <span class="dish-name">${item.name}</span>
                     <span class="dish-price">${rupee(item.price)}</span>
                 </div>
-                <p class="dish-desc">${item.desc}</p>
+                ${item.desc ? `<p class="dish-desc">${item.desc}</p>` : ''}
             </div>
         </div>
     `).join('');
@@ -128,27 +126,47 @@ function renderMenuCategories(containerId) {
                     <div class="menu-category-icon"><i class="fa-solid ${ICONS[cat.icon] || 'fa-utensils'}"></i></div>
                     <div>
                         <h2>${cat.title}</h2>
-                        <p>${cat.subtitle}</p>
+                        ${cat.subtitle ? `<p>${cat.subtitle}</p>` : ''}
                     </div>
                 </div>
                 <div class="menu-grid">
                     ${cat.items.map(item => `
                         <div class="menu-item-card fade-in">
-                            <div class="arch-media ratio-square">
-                                ${item.signature ? '<span class="dish-signature-tag">Signature</span>' : ''}
-                                <img src="${item.img}" alt="${item.name}  Toppino's Pizzeria" loading="lazy">
-                            </div>
+                            ${item.img ? `
+                                <div class="menu-item-photo">
+                                    <img src="${item.img}" alt="Photo for ${item.name}" loading="lazy">
+                                </div>
+                            ` : ''}
                             <div class="menu-item-info">
                                 <div class="menu-item-line">
-                                    <span class="name">${item.name}${item.jain ? '<span class="menu-item-jain" title="Jain option available on request">J</span>' : ''}</span>
+                                    <span class="name">${item.name}</span>
                                     <span class="leader"></span>
-                                    <span class="price">${rupee(item.price)}</span>
+                                    ${item.price != null ? `<span class="price">${rupee(item.price)}</span>` : ''}
                                 </div>
-                                <p class="menu-item-desc">${item.desc}</p>
+                                ${item.desc ? `<p class="menu-item-desc">${item.desc}</p>` : ''}
+                                ${item.variants ? `
+                                    <ul class="menu-item-variants">
+                                        ${item.variants.map(variant => `
+                                            <li>
+                                                <span class="menu-item-variant-name">
+                                                    ${variant.img ? `<img src="${variant.img}" alt="${variant.name}" loading="lazy">` : ''}
+                                                    <span>${variant.name}</span>
+                                                </span>
+                                                <span class="price">${rupee(variant.price)}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                ` : ''}
                             </div>
                         </div>
                     `).join('')}
                 </div>
+                ${cat.footerQuote ? `
+                    <blockquote class="menu-category-quote">
+                        <p>“${cat.footerQuote.text}”</p>
+                        <cite>— ${cat.footerQuote.author}</cite>
+                    </blockquote>
+                ` : ''}
             </div>
         </section>
     `).join('');

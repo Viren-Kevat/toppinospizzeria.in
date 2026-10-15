@@ -7,7 +7,7 @@
 
 const SITE = {
     name: "Toppino's Pizzeria",
-    tagline: "Neapolitana Pizzeria & Turkish Kitchen",
+    tagline: "Italian-Led Neapolitana Pizzeria",
     domain: "toppinospizzeria.in",
     address: {
         line1: "Near Ornet Park, 3, Sindhu Bhavan Marg",
@@ -40,169 +40,146 @@ function waLink(prefill) {
 
 /* ============================================
    MENU DATA
-   Menu data sourced from Toppinos_Menu.xlsx.
-   Item names, descriptions and prices are taken
-   verbatim from that spreadsheet.
-   Dish photos under img/menu/ are representative
-   stock photography used as placeholders until
-   professional photography is available.
    ============================================ */
 const MENU = [
     {
         id: "salads",
         title: "Salads",
-        subtitle: "Crisp, bright, garden to bowl",
         icon: "leaf",
         items: [
             { name: "Greek Salad", desc: "Cucumber, Tomato, Bell Pepper, Black Olives, Red Onion, Feta", price: 349, img: "img/menu/salad-greek-style.jpg" },
-            { name: "Turkish Çoban Salad", desc: "Tomato, Cucumber, Onion, Bell Pepper, Parsley, Sumac", price: 299, img: "img/menu/salad-coban-salatasi.jpg" },
-            { name: "Burrata Caprese", desc: "Cherry Tomato, Fresh Basil, Burrata, Balsamic Glaze", price: 499, img: "img/menu/salad-caprese.jpg" }
-        ]
+            { name: "Burrata Caprese", desc: "Cherry Tomato, Fresh Basil, Burrata, Balsamic Glaze", price: 499, img: "img/new image/Burrata Caprese.jpg" },
+            { name: "Toppino's Energy Bowl (180g)", desc: "Lettuce, Quinoa, Orange, Walnut, Dry Cranberry, Carrot, Pomegranate, Mix Seeds, Crushed Almond, Orange Dressing", price: 425, img: "img/new image/Toppino's Energy Bowl.jpg" },
+            { name: "Caesar Salad (120g)", desc: "Lettuce, Olives, Pesto Croutons, Cherry Tomato, Parmesan Cheese", price: 325, img: "img/menu/salad-rocket-parmesan.jpg" },
+            { name: "No Myth Greek Salad (150g)", desc: "Cucumber, Bellpepper, Onion, Tomato, Feta, Olive, Cherry Tomato, French Vinaigrette", price: 350, img: "img/new image/No Myth Greek Salad.jpg" },
+            { name: "Hippie High Protein Salad (180g)", desc: "Lettuce, Quinoa, Tofu, Sundried Tomato, Sweet Corn, Cherry Tomato, Onion, Bell Pepper, Pomegranate, Jalapeno, Hummus, Tomato Basil Vinaigrette, Mix Seeds", price: 395, img: "img/new image/Hippie High Protein Salad.jpg" },
+            { name: "Chilli Corn Avocado Salad (150g)", desc: "Avocado, Onion, Bellpepper, Lettuce, Olives, Chilli Lime Mayo Dressing, Pomegranate, Cherry Tomato, Mixed Seeds", price: 450, img: "img/new image/Chilli Corn Avocado Salad.jpg" }
+        ],
+        footerQuote: {
+            text: "You better cut the pizza in four pieces because I'm not hungry enough to eat six.",
+            author: "Yogi Berra"
+        }
     },
     {
         id: "soups",
         title: "Soups",
-        subtitle: "Warm starts, ladled fresh",
         icon: "soup",
         items: [
-            { name: "Cream of Mushroom", desc: "Mushroom, Garlic, Thyme, Black Pepper", price: 249, img: "img/menu/soup-cream-of-mushroom.jpg" },
-            { name: "Roasted Tomato Basil", desc: "Roasted Tomato, Basil, Garlic, Parmesan", price: 249, img: "img/menu/soup-tomato-basil.jpg" },
-            { name: "Broccoli Parmesan", desc: "Broccoli, Garlic, Cream, Parmesan", price: 249, img: "img/menu/soup-cream-of-mushroom.jpg" },
-            { name: "Italian Minestrone", desc: "Zucchini, Carrot, Beans, Celery, Pasta, Parmesan, Basil", price: 299, img: "img/menu/soup-minestrone.jpg" },
-            { name: "Turkish Lentil Soup", desc: "Red Lentils, Carrot, Onion, Cumin, Paprika, Lemon", price: 249, img: "img/menu/soup-mercimek-corbasi.jpg" }
+            { name: "Cream of Mushroom", desc: "Mushroom, Garlic, Thyme, Black Pepper", price: 249, img: "img/new image/Cream of Mushroom.webp" },
+            { name: "Roasted Tomato Basil", desc: "Roasted Tomato, Basil, Garlic, Parmesan", price: 249, img: "img/new image/Roasted Tomato Basil.jpg" },
+            { name: "Broccoli Parmesan", desc: "Broccoli, Garlic, Cream, Parmesan", price: 249, img: "img/new image/Broccoli Parmesan.jpg" },
+            { name: "Italian Minestrone", desc: "Zucchini, Carrot, Beans, Celery, Pasta, Parmesan, Basil", price: 299, img: "img/new image/Italian Minestrone.jpg" },
+            { name: "Mexican Soup", desc: "Sweet Corn, Black Beans, Kidney Beans, Tomato, Bell Pepper, Jalapeño, Mexican Herbs, Coriander, Lime", price: 249, img: "img/new image/Mexican Soup.jpg" }
         ]
     },
     {
-        id: "garlic-bread",
-        title: "Garlic Bread & Turkish Bread",
-        subtitle: "Warm breads, fresh from the oven",
+        id: "starters",
+        title: "Starters",
+        icon: "mezze",
+        items: [
+            { name: "Classic French Fries (170g)", desc: "Potato, Salt", price: 265, img: "img/new image/Classic French Fries.jpg" },
+            { name: "Peri Peri French Fries (170g)", desc: "Potato, Peri Peri Seasoning, Salt", price: 325, img: "img/new image/Peri Peri French Fries.jpg" },
+            { name: "Butter Garlic French Fries (170g)", desc: "Potato, Garlic Butter, Parsley", price: 325, img: "img/new image/Butter Garlic French Fries.webp" },
+            { name: "Cheese Garlic French Fries (200g)", desc: "Potato, Melted Cheese, Garlic, Parsley", price: 385, img: "img/new image/Cheese Garlic French Fries.jpg" },
+            { name: "Truffle Oil Parmesan Fries (170g)", desc: "Potato, Truffle Oil, Parmesan, Parsley", price: 410, img: "img/new image/Truffle Oil Parmesan Fries.jpg" },
+            { name: "Mushroom Crostini", desc: "Toasted Bread, Sautéed Mushroom, Garlic, Cheese, Herbs", price: 410, img: "img/new image/Mushroom Crostini.jpg" },
+            { name: "Mushroom Bruschetta", desc: "Toasted Bread, Mushroom, Tomato, Garlic, Basil, Olive Oil", price: 410, img: "img/new image/Mushroom Bruschetta.jpg" }
+        ]
+    },
+    {
+        id: "italian-toast",
+        title: "Italian Toast",
         icon: "bread",
         items: [
-            { name: "Turkish Simit", desc: "Sesame, Turkish White Cheese", price: 179, img: "img/menu/starter-cheese-garlic-bread.jpg" },
-            { name: "Bazlama", desc: "Garlic Butter, Parsley", price: 199, img: "img/menu/starter-bruschetta.jpg" },
-            { name: "Garlic Herb Turkish Bread", desc: "Roasted Garlic, Parsley, Oregano, Mozzarella", price: 249, img: "img/menu/starter-cheese-garlic-bread.jpg" },
-            { name: "Za'atar Turkish Bread", desc: "Za'atar, Sesame, EVOO", price: 249, img: "img/menu/starter-bruschetta.jpg" },
-            { name: "Cheese & Chilli Turkish Bread", desc: "Mozzarella, Turkish White Cheese, Green Chilli, Parsley", price: 299, img: "img/menu/starter-cheese-garlic-bread.jpg" }
-        ]
-    },
-    {
-        id: "turkish-pide",
-        title: "Turkish Pide",
-        subtitle: "Boat-shaped, baked to perfection",
-        icon: "bread",
-        items: [
-            { name: "Classic Cheese Pide", desc: "Mozzarella, Turkish White Cheese, Parsley", price: 399, img: "img/menu/pide-peynirli.jpg" },
-            { name: "Spinach & Cheese Pide", desc: "Spinach, Garlic, Mozzarella, Turkish White Cheese", price: 399, img: "img/menu/pide-spinach.jpg" },
-            { name: "Mushroom & Cheese Pide", desc: "Mushroom, Onion, Garlic, Mozzarella, Turkish White Cheese", price: 449, img: "img/menu/pide-cheese.jpg" },
-            { name: "Tandoori Paneer Pide", desc: "Tandoori Paneer, Onion, Bell Pepper, Jalapeño, Mozzarella", price: 449, img: "img/menu/pide-paneer.jpg" },
-            { name: "Mediterranean Pide", desc: "Basil Pesto, Sundried Tomato, Black Olives, Baby Corn, Jalapeño, Mozzarella, Turkish White Cheese", price: 499, img: "img/menu/pide-vegetable.jpg" }
-        ]
-    },
-    {
-        id: "pasta",
-        title: "Pasta",
-        subtitle: "Italian classics, made to order",
-        icon: "pasta",
-        items: [
-            { name: "Penne Arrabbiata", desc: "Tomato, Garlic, Basil, Chilli Flakes, Parmesan", price: 349, img: "img/menu/pasta-arrabbiata.jpg" },
-            { name: "Fettuccine Alfredo", desc: "Mushroom, Garlic, Parsley, Parmesan", price: 399, img: "img/menu/pasta-alfredo.jpg" },
-            { name: "Spaghetti Aglio e Olio", desc: "Garlic, Parsley, Chilli Flakes, Parmesan, Lemon Zest", price: 349, img: "img/menu/pasta-aglio-olio.jpg" },
-            { name: "Penne Basil Pesto", desc: "Cherry Tomato, Black Olives, Bell Pepper, Parmesan, Pine Nuts", price: 399, img: "img/menu/pasta-pesto-penne.jpg" },
-            { name: "Pink Sauce Burrata Pasta", desc: "Tomato, Basil, Parmesan, Burrata", price: 499, img: "img/menu/pasta-ravioli.jpg" }
-        ]
+            { name: "Avocado & Ricotta pesto toast", desc: "sourdough bread, butter, ricotta cheese, guacamole, Garnish-Mixed seeds, microgreens, truffle oil pomegranate", price: 449, img: "img/new image/Avocado & Ricotta pesto toast.jpg" },
+            { name: "Mushroom Thyme & Mascarpone toast", desc: "sourdough bread,butter,mascarpone cheese,mushroom,white sauce", price: 399, img: "img/new image/Mushroom Thyme & Mascarpone toast.jpg" },
+            { name: "Mushroom Melt", desc: "Butter Clozo Bread, Butter, mushroom, white sauce, Garnish-microgreen", price: 349, img: "img/new image/Mushroom Melt.jpg" },
+            { name: "Earthy Mushroom toast", desc: "Sourdough Bread, Butter, Schezwan sauce, mushroom, Dip-chilli garlic", price: 329, img: "img/new image/Earthy Mushroom toast.jpg" },
+            { name: "Sautéed vegetable", desc: "English & Indian veggies, Paneer, Butter, salt, Pepper, Small aromatic powder", price: 299, img: "img/new image/Sautéed vegetable.jpg" }
+        ],
+        footerQuote: {
+            text: "Ideas are like pizza dough, made to be tossed around.",
+            author: "Anna Quindlen's"
+        }
     },
     {
         id: "neapolitan-pizzas",
-        title: "Italian Neapolitan Pizzas",
-        subtitle: "Wood-fired, Napoli style",
+        title: "Pizzas - Neapolitan Style",
         icon: "flame",
         items: [
             { name: "Margherita Napoletana", desc: "Mozzarella, Turkish White Cheese, Parsley", price: 499, img: "img/menu/pizza-margherita.jpg" },
             { name: "Pesto Burrata", desc: "Basil Pesto, Cherry Tomato, Fior di Latte, Burrata, Basil, Pine Nuts", price: 649, img: "img/menu/pizza-pesto.jpg" },
             { name: "Funghi Tartufo", desc: "Mushroom, Roasted Garlic, Fior di Latte, Parmesan, Thyme, Truffle Oil", price: 599, img: "img/menu/pizza-mushroom-truffle.jpg" },
             { name: "Quattro Formaggi", desc: "Fior di Latte, Gorgonzola, Taleggio, Parmesan, Black Pepper", price: 599, img: "img/menu/pizza-four-cheese-white.jpg" },
-            { name: "Diavola Veg", desc: "Bell Pepper, Jalapeño, Black Olives, Green Chilli, Fior di Latte, Chilli Oil", price: 549, img: "img/menu/pizza-veggie-delight.jpg" }
+            { name: "Diavola Veg", desc: "Bell Pepper, Jalapeño, Black Olives, Green Chilli, Fior di Latte, Chilli Oil", price: 549, img: "img/menu/pizza-veg-supreme.jpg" },
+            { name: "Classic Margherita", desc: "Tomato Sauce, Fresh Mozzarella, Fresh Basil, Extra Virgin Olive Oil, Salt", price: 399, img: "img/menu/pizza-margherita.jpg" },
+            { name: "Pesto Pomodorini", desc: "Basil Pesto, Mozzarella, Cherry Tomato, Parmesan, Fresh Basil, Olive Oil", price: 499, img: "img/new image/Pesto Pomodorini.jpg" },
+            { name: "Truffle Mushroom", desc: "Truffle Cream, Mushroom, Mozzarella, Parmesan, Truffle Oil, Fresh Thyme", price: 699, img: "img/new image/Truffle Mushroom.jpg" },
+            { name: "Bianca", desc: "Garlic Cream, Mozzarella, Parmesan, Ricotta, Fresh Basil, Olive Oil", price: 449, img: "img/new image/Bianca.jpg" },
+            { name: "Pizza Ortolana", desc: "Tomato Sauce, Mozzarella, Bell Pepper, Onion, Mushroom, Black Olives, Sweet Corn, Jalapeño, Basil, Olive Oil", price: 499, img: "img/menu/pizza-mediterranean-olive-feta.jpg" }
         ]
     },
     {
-        id: "turkish-pizza",
-        title: "Turkish Pizza / Lahmacun",
-        subtitle: "Thin, crispy, loaded with flavour",
-        icon: "flame",
+        id: "pasta",
+        title: "Pasta",
+        icon: "pasta",
         items: [
-            { name: "Classic Veg Lahmacun", desc: "Mushroom, Tomato, Onion, Bell Pepper, Parsley, Garlic, Turkish Spices", price: 349, img: "img/menu/pizza-marinara.jpg" },
-            { name: "Cheese & Vegetable Lahmacun", desc: "Tomato, Onion, Bell Pepper, Mushroom, Mozzarella, Turkish White Cheese, Parsley", price: 399, img: "img/menu/pizza-mediterranean-olive-feta.jpg" },
-            { name: "Mediterranean Lahmacun", desc: "Sundried Tomato, Roasted Bell Pepper, Black Olives, Mushroom, Turkish White Cheese, Parsley", price: 449, img: "img/menu/pizza-sundried-tomato-feta.jpg" },
-            { name: "Tandoori Turkish Pizza", desc: "Tandoori Paneer, Onion, Bell Pepper, Jalapeño, Mozzarella, Coriander", price: 449, img: "img/menu/pizza-tandoori-paneer.jpg" },
-            { name: "Pesto Turkish Pizza", desc: "Basil Pesto, Sundried Tomato, Black Olives, Jalapeño, Baby Corn, Mozzarella, Turkish White Cheese", price: 499, img: "img/menu/pizza-pesto.jpg" }
+            { name: "Penne Arrabbiata", desc: "Tomato, Garlic, Basil, Chilli Flakes, Parmesan", price: 349, img: "img/new image/Penne Arrabbiata.jpg" },
+            { name: "Fettuccine Alfredo", desc: "Mushroom, Garlic, Parsley, Parmesan", price: 399, img: "img/menu/pasta-alfredo.jpg" },
+            { name: "Spaghetti Aglio e Olio", desc: "Garlic, Parsley, Chilli Flakes, Parmesan, Lemon Zest", price: 349, img: "img/menu/pasta-aglio-olio.jpg" },
+            { name: "Penne Basil Pesto", desc: "Cherry Tomato, Black Olives, Bell Pepper, Parmesan, Pine Nuts", price: 399, img: "img/menu/pasta-pesto-penne.jpg" },
+            { name: "Pink Sauce Burrata Pasta", desc: "Tomato, Basil, Parmesan, Burrata", price: 499, img: "img/new image/Pink Sauce Burrata Pasta.jpg" },
+            { name: "Creamy Mushroom Pasta", desc: "Mushroom, Creamy Sauce, Parmesan, Garlic, Black Pepper, Parsley", price: 399, img: "img/new image/Creamy Mushroom Pasta.jpg" },
+            { name: "Sun-Dried Tomato Pasta", desc: "Sun-Dried Tomato, Creamy Sauce, Parmesan, Garlic, Basil, Cherry Tomato", price: 429, img: "img/new image/Sun-Dried Tomato Pasta.jpg" }
         ]
     },
     {
         id: "desserts",
         title: "Desserts",
-        subtitle: "A sweet finish",
         icon: "dessert",
         items: [
             { name: "Classic Tiramisu", desc: "Mascarpone, Espresso, Cocoa", price: 349, img: "img/menu/dessert-tiramisu.jpg" },
             { name: "Vanilla Panna Cotta", desc: "Vanilla, Berry Compote", price: 299, img: "img/menu/dessert-panna-cotta.jpg" },
-            { name: "Italian Chocolate Brownie", desc: "Warm Brownie, Vanilla Gelato, Chocolate Sauce", price: 299, img: "img/menu/dessert-kunefe.jpg" },
-            { name: "Chocolate Brownie with Ice Cream", desc: "", price: 195, img: "img/menu/dessert-sutlac.jpg" },
-            { name: "Ice Cream - Vanilla", desc: "", price: 135, img: "img/menu/dessert-panna-cotta.jpg" },
-            { name: "Ice Cream - Chocolate", desc: "", price: 145, img: "img/menu/dessert-tiramisu.jpg" },
-            { name: "Ice Cream - Butterscotch", desc: "", price: 155, img: "img/menu/dessert-kunefe.jpg" },
-            { name: "Ice Cream - American Nuts", desc: "", price: 165, img: "img/menu/dessert-baklava.jpg" },
-            { name: "Ice Cream - Chocolate Brownie", desc: "", price: 175, img: "img/menu/dessert-sutlac.jpg" }
+            { name: "Italian Chocolate Brownie", desc: "Warm Brownie, Vanilla Gelato, Chocolate Sauce", price: 299, img: "img/new image/Italian Chocolate Brownie.jpg" },
+            {
+                name: "Ice Creams",
+                img: "img/new image/Ice Creams.jpg",
+                variants: [
+                    { name: "Vanilla", price: 135, img: "img/new image/Vanilla Ice Creams.jpg" },
+                    { name: "Chocolate", price: 145, img: "img/new image/Chocolate ice cream.jpg" },
+                    { name: "Butterscotch", price: 155, img: "img/new image/Butterscotch Ice Creams.jpg" },
+                    { name: "American Nuts", price: 165, img: "img/new image/American  nuts ice cream.jpg" },
+                    { name: "Chocolate Brownie", price: 175, img: "img/new image/Chocolate Brownie ice cream.jpg" }
+                ]
+            },
+            { name: "Chocolate Brownie with Ice Cream", price: 195, img: "img/new image/Chocolate Brownie with Ice Cream.jpg" }
         ]
     },
     {
         id: "mocktails",
         title: "Mocktails",
-        subtitle: "Refreshing handcrafted drinks",
         icon: "cold",
         items: [
-            { name: "Turkish Pomegranate Fizz", desc: "", price: 279, img: "img/menu/coldbev-mocktails.jpg" },
-            { name: "Istanbul Blue", desc: "Blue Curaçao, Lemon, Mint, Soda", price: 279, img: "img/menu/coldbev-mocktails.jpg" },
-            { name: "Mediterranean Sunset", desc: "Orange, Cranberry, Grenadine, Lemon", price: 279, img: "img/menu/coldbev-mocktails.jpg" },
-            { name: "Berry Basil Smash", desc: "Mixed Berries, Basil, Lemon, Soda", price: 299, img: "img/menu/coldbev-mocktails.jpg" },
-            { name: "Passionfruit Mojito", desc: "Passionfruit, Mint, Lime, Soda", price: 299, img: "img/menu/coldbev-mocktails.jpg" }
+            { name: "Turkish Pomegranate Fizz", desc: "Turkish Pomegranate Fizz", price: 279, img: "img/new image/Turkish Pomegranate Fizz.jpg" },
+            { name: "Istanbul Blue", desc: "Blue Curaçao, Lemon, Mint, Soda", price: 279, img: "img/new image/Istanbul Blue.jpg" },
+            { name: "Mediterranean Sunset", desc: "Orange, Cranberry, Grenadine, Lemon", price: 279, img: "img/new image/Mediterranean Sunset.jpg" },
+            { name: "Berry Basil Smash", desc: "Mixed Berries, Basil, Lemon, Soda", price: 299, img: "img/new image/Berry Basil Smash.jpg" },
+            { name: "Passionfruit Mojito", desc: "Passionfruit, Mint, Lime, Soda", price: 299, img: "img/new image/Passionfruit Mojito.jpg" }
         ]
     },
     {
         id: "carbonated",
         title: "Carbonated",
-        subtitle: "Classic fizzy drinks",
         icon: "cold",
         items: [
-            { name: "Sprite", desc: "", price: 99, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "Fanta", desc: "", price: 99, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "Coke", desc: "", price: 99, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "Zero Coke", desc: "", price: 99, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "Thums Up", desc: "", price: 129, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "Tonic Water", desc: "", price: 199, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "Ginger Ale", desc: "", price: 60, img: "img/menu/coldbev-ayran.jpg" },
-            { name: "RedBull Energy", desc: "", price: 125, img: "img/menu/coldbev-ayran.jpg" }
-        ]
-    },
-    {
-        id: "cold-coffee",
-        title: "Cold Coffee",
-        subtitle: "Chilled coffee creations",
-        icon: "cold",
-        items: [
-            { name: "Classic Cold Coffee", desc: "Espresso, Chilled Milk, Ice", price: 229, img: "img/menu/coldbev-italian-cold-coffee.jpg" },
-            { name: "Mocha Cold Coffee", desc: "Espresso, Chocolate, Milk, Ice", price: 269, img: "img/menu/coldbev-italian-cold-coffee.jpg" },
-            { name: "Hazelnut Cold Coffee", desc: "Espresso, Hazelnut, Milk, Ice", price: 299, img: "img/menu/coldbev-italian-cold-coffee.jpg" },
-            { name: "Vanilla Cream Cold Coffee", desc: "Espresso, Vanilla, Milk, Cream", price: 299, img: "img/menu/coldbev-italian-cold-coffee.jpg" }
-        ]
-    },
-    {
-        id: "turkish-coffee",
-        title: "Angara / Turkish Coffee",
-        subtitle: "Traditional Turkish brews",
-        icon: "cup",
-        items: [
-            { name: "Angara Turkish Coffee", desc: "Turkish Delight", price: 199, img: "img/menu/hotbev-angara-coffee.jpg" },
-            { name: "Turkish Cold Coffee", desc: "Turkish Coffee, Milk, Ice", price: 299, img: "img/menu/hotbev-turkish-coffee.jpg" }
+            { name: "Sprite", price: 99, img: "img/new image/Sprite.jpg" },
+            { name: "Fanta", price: 99, img: "img/new image/Fanta.jpg" },
+            { name: "Coke", price: 99, img: "img/new image/Coke.jpg" },
+            { name: "Zero Coke", price: 99, img: "img/new image/Zero Coke.jpg" },
+            { name: "Thums Up", price: 129, img: "img/new image/Thums Up.jpg" },
+            { name: "Tonic Water", price: 199, img: "img/new image/Tonic Water.jpg" },
+            { name: "Ginger Ale", price: 60, img: "img/new image/Ginger Ale.jpg" },
+            { name: "Red Bull Energy", price: 125, img: "img/new image/Red Bull Energy.jpg" }
         ]
     }
 ];
