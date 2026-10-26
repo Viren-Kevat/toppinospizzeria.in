@@ -68,6 +68,10 @@ img {
     color: #fff;
 }
 
+/* details not provided yet (phone, WhatsApp, email, review link) ship with
+   [hidden]; this keeps .btn / .contact-card display rules from overriding it */
+[hidden] { display: none !important; }
+
 /* ============================================
    BUTTONS
    ============================================ */
@@ -388,8 +392,9 @@ color: var(--cream);}
 
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 640px;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 7.5rem 0 5rem;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -429,9 +434,9 @@ color: var(--cream);}
     display: block;
 }
 .hero-title {
-    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-size: clamp(2.1rem, 5.6vw, 4.25rem);
     color: #fff;
-    max-width: 16ch;
+    max-width: 22ch;
     margin: 0 auto;
 }
 .hero-title em { color: #F0C29B; font-style: italic; }
@@ -460,6 +465,39 @@ color: var(--cream);}
 @keyframes bob {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, 8px); }
+}
+@media (max-height: 760px), (max-width: 640px) {
+    .hero-scroll-cue { display: none; }
+}
+
+/* trust strip directly under the hero */
+.trust-strip {
+    background: var(--pine-deep-bg);
+    color: var(--cream);
+    padding: 1.1rem 0;
+}
+.trust-strip ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 2.25rem;
+}
+.trust-strip li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.trust-strip i { color: #F0C29B; }
+
+.section-actions {
+    text-align: center;
+    margin-top: 3rem;
 }
 
 /* ============================================
@@ -545,8 +583,11 @@ color: var(--cream);}
     margin-bottom: 0.5rem;
 }
 .dish-name {
+    font-family: 'Manrope', sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
 }
 .dish-price {
     font-family: 'Fraunces', serif;
@@ -573,6 +614,57 @@ color: var(--cream);}
     padding: 0.3rem 0.6rem;
     border-radius: 999px;
     z-index: 2;
+}
+
+/* ============================================
+   MENU AT A GLANCE (home category cards)
+   ============================================ */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+@media (min-width: 768px) { .category-grid { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; } }
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--cream-card);
+    border: 1px solid var(--line);
+    border-radius: 4px 4px 14px 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.category-card-media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--pine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.category-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.category-card-media i { font-size: 2.5rem; color: #F0C29B; }
+.category-card-body {
+    padding: 1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+}
+.category-card-body h3 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+.category-card-price {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--terracotta);
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 /* ============================================
@@ -622,8 +714,9 @@ color: var(--cream);}
     box-shadow: var(--shadow);
 }
 .reviews-stars { color: var(--terracotta); font-size: 1.4rem; letter-spacing: 0.3rem; margin-bottom: 1.25rem; }
-.reviews-card h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
-.reviews-card p { color: var(--ink-soft); margin-bottom: 1.75rem; }
+.reviews-card h2 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+.reviews-card p { color: var(--ink-soft); margin-bottom: 0; }
+.reviews-card .btn { margin-top: 1.75rem; }
 
 /* ============================================
    LOCATION / HOURS
@@ -666,6 +759,84 @@ color: var(--cream);}
 }
 .map-embed iframe { width: 100%; height: 100%; min-height: 320px; border: 0; }
 
+.info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--pine);
+    margin: 0 0 0.75rem;
+}
+.info-note { font-size: 0.85rem; color: var(--ink-soft); margin: 0.75rem 0 2rem; font-style: italic; }
+
+/* ============================================
+   FAQ (Visit page)
+   ============================================ */
+
+.faq-list { max-width: 48rem; margin: 0 auto; }
+.faq-item {
+    background: var(--cream-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 0.85rem;
+    overflow: hidden;
+}
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.1rem 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.4;
+}
+.faq-item summary::after {
+    content: '+';
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--terracotta);
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+    padding: 0 1.4rem 1.2rem;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+/* ============================================
+   CLOSING CTA BAND (photo background)
+   ============================================ */
+
+.cta-band {
+    position: relative;
+    padding: 6rem 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+.cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,16,10,0.62), rgba(20,16,10,0.82));
+}
+.cta-band .wrap { position: relative; z-index: 2; }
+.cta-band h2 { color: #fff; font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: 1rem; }
+.cta-band p { color: rgba(255,255,255,0.85); max-width: 34rem; margin: 0 auto 2rem; }
+@media (max-width: 640px) { .cta-band { padding: 4.5rem 0; } }
+
 /* ============================================
    INSTAGRAM CTA BAND
    ============================================ */
@@ -676,8 +847,8 @@ color: var(--cream);}
     text-align: center;
     padding: 4.5rem 1.5rem;
 }
-.instagram-band .fa-instagram { font-size: 2.25rem; margin-bottom: 1.25rem; color: #F0C29B; }
-.instagram-band h3 { color: #fff; font-size: 1.6rem; margin-bottom: 0.5rem; }
+.instagram-band > .fa-instagram { font-size: 2.25rem; margin-bottom: 1.25rem; color: #F0C29B; }
+.instagram-band h2 { color: #fff; font-size: 1.8rem; margin-bottom: 0.5rem; }
 .instagram-band p { color: rgba(248,239,223,0.75); margin-bottom: 1.75rem; }
 
 /* ============================================
@@ -845,7 +1016,7 @@ color: var(--cream);}
     align-items: baseline;
     gap: 0.5rem;
 }
-.menu-item-line .name { font-weight: 700; font-size: 1rem; }
+.menu-item-line .name { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.4; margin: 0; }
 .menu-item-line .leader { flex: 1; border-bottom: 1px dotted var(--line); transform: translateY(-3px); }
 .menu-item-line .price { color: var(--terracotta); font-weight: 700; font-family: 'Fraunces', serif; white-space: nowrap; }
 .menu-item-desc { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.4rem; line-height: 1.45; }
@@ -897,7 +1068,7 @@ color: var(--cream);}
     transform: translateY(-1px);
 }
 
-/* Sticky mobile action bar  for QR-scanning diners on the Menu page */
+/* Sticky mobile action bar (all pages): Get Directions, View Menu, plus Call/WhatsApp once provided */
 .mobile-action-bar {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -946,12 +1117,16 @@ color: var(--cream);}
    CONTACT PAGE
    ============================================ */
 
+/* fixed-width tracks, centred, so the grid looks right with 2 cards
+   (Instagram + Facebook today) or 5 (once phone/WhatsApp/email are added) */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
+    justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 4rem;
 }
+@media (max-width: 520px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-form-wrap { margin-top: 4rem; }
 .contact-card {
     background: var(--cream-card);
     border: 1px solid var(--line);
@@ -1029,7 +1204,7 @@ color: var(--cream);}
     text-align: center;
 }
 .value-card .icon { font-size: 1.75rem; color: var(--terracotta); margin-bottom: 1rem; }
-.value-card h4 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+.value-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
 .value-card p { font-size: 0.85rem; color: var(--ink-soft); }
 
 .disclaimer-box {
@@ -1062,7 +1237,7 @@ color: var(--cream);}
     font-style: italic;
     margin-bottom: 0.5rem;
 }
-.process-step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+.process-step h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 .process-step p { font-size: 0.85rem; color: var(--ink-soft); }
 
 /* ============================================

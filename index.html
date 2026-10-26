@@ -4,21 +4,26 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Toppino's Pizzeria | Italian-Led Wood-Fired Menu, Ahmedabad</title>
-    <meta name="description" content="Explore Toppino's Italian-led menu of Neapolitan pizza and varied global favorites in Thaltej, Ahmedabad. View the menu, get directions and enjoy handcrafted brick-oven cooking." />
+    <title>Neapolitan Pizza, Sindhu Bhavan Road Ahmedabad | Toppino's</title>
+    <meta name="description" content="Neapolitan pizza baked in a live brick oven on Sindhu Bhavan Road, Thaltej. Pizzas from ₹399, pasta, salads, desserts. View the menu and visit today." />
     <link rel="canonical" href="https://toppinospizzeria.in/" />
 
-    <meta property="og:type" content="restaurant" />
-    <meta property="og:title" content="Toppino's Pizzeria | Italian-Led Wood-Fired Menu" />
-    <meta property="og:description" content="An Italian-led menu of Neapolitan pizza and varied global favorites in Thaltej, Ahmedabad." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Toppino's Neapolitana Pizzeria" />
+    <meta property="og:title" content="Neapolitan Pizza, Sindhu Bhavan Road Ahmedabad | Toppino's" />
+    <meta property="og:description" content="Neapolitan pizza baked in a live brick oven on Sindhu Bhavan Road, Thaltej. Pizzas from ₹399, pasta, salads, desserts. View the menu and visit today." />
     <meta property="og:image" content="https://toppinospizzeria.in/img/hero-pizza-oven.webp" />
     <meta property="og:url" content="https://toppinospizzeria.in/" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 
+    <link rel="preload" as="image" href="img/hero-pizza-oven-960.webp" imagesrcset="img/hero-pizza-oven-960.webp 960w, img/hero-pizza-oven.webp 1920w" imagesizes="100vw" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -27,40 +32,49 @@
     {
         "@context": "https://schema.org",
         "@type": "Restaurant",
-        "name": "Toppino's Pizzeria",
-        "servesCuisine": ["Italian", "Turkish", "Greek", "Mexican", "Mediterranean"],
-        "priceRange": "₹₹",
+        "@id": "https://toppinospizzeria.in/#restaurant",l̥ō
+        "name": "Toppino's Neapolitana Pizzeria",
+        "url": "https://toppinospizzeria.in/",
+        "image": "https://toppinospizzeria.in/img/hero-pizza-oven.webp",
+        "logo": "https://toppinospizzeria.in/img/logo.webp",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Near Ornet Park, 3,Sindhu Bhavan Marg, PRL Colony, Thaltej",
+            "streetAddress": "Near Ornet Park, 3, Sindhu Bhavan Marg, PRL Colony, Thaltej",
             "addressLocality": "Ahmedabad",
             "addressRegion": "Gujarat",
             "postalCode": "380059",
             "addressCountry": "IN"
         },
-        "url": "https://toppinospizzeria.in/",
-        "image": "https://toppinospizzeria.in/img/hero-pizza-oven.webp"
+        "openingHours": "Mo-Su 17:00-02:00",
+        "servesCuisine": ["Italian", "Pizza", "Turkish", "Greek", "Mexican", "Mediterranean"],
+        "priceRange": "₹₹",
+        "menu": "https://toppinospizzeria.in/menu",
+        "hasMenu": "https://toppinospizzeria.in/menu",
+        "sameAs": [
+            "https://www.instagram.com/toppinospizzariaofficial/",
+            "https://www.facebook.com/profile.php?id=61593201459772"
+        ]
     }
     </script>
 </head>
 
-<body>
+<body class="has-mobile-bar">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="wrap navbar-inner">
-            <a class="brand" href="index.html">
-                <img src="img/logo.png" class="brand-logo" alt="Toppino's Pizzeria logo" />
+            <a class="brand" href="./">
+                <img src="img/logo.webp" class="brand-logo" alt="Toppino's Neapolitana Pizzeria logo" width="184" height="192" />
                 <span class="brand-text">Toppino's<small>Neapolitana Pizzeria</small></span>
             </a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="about.html">About</a>
-                <a href="visit.html">Visit Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="franchise.html">Franchise</a>
+                <a href="./">Home</a>
+                <a href="menu">Menu</a>
+                <a href="about">About</a>
+                <a href="visit-us">Visit Us</a>
+                <a href="contact">Contact</a>
+                <a href="franchise">Franchise</a>
             </div>
-            <a href="menu.html" class="btn btn-terracotta btn-sm nav-cta" data-track="nav_view_menu">View Menu</a>
+            <a href="menu" class="btn btn-terracotta btn-sm nav-cta" data-track="nav_view_menu">View Menu</a>
             <button class="btn menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-label="Open menu">
                 <div class="hamburger"><span></span><span></span></div>
             </button>
@@ -74,162 +88,225 @@
         </div>
         <div class="offcanvas-body">
             <ul class="nav flex-column" style="list-style:none;">
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="menu.html">Menu</a></li>
-                <li><a class="nav-link" href="about.html">About</a></li>
-                <li><a class="nav-link" href="visit.html">Visit Us</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-                <li><a class="nav-link" href="franchise.html">Franchise</a></li>
+                <li><a class="nav-link" href="./">Home</a></li>
+                <li><a class="nav-link" href="menu">Menu</a></li>
+                <li><a class="nav-link" href="about">About</a></li>
+                <li><a class="nav-link" href="visit-us">Visit Us</a></li>
+                <li><a class="nav-link" href="contact">Contact</a></li>
+                <li><a class="nav-link" href="franchise">Franchise</a></li>
             </ul>
             <div class="offcanvas-social">
                 <a href="#" data-site-href="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" data-site-href="tel" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+                <a href="#" data-site-href="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp" hidden><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" data-site-href="tel" aria-label="Call" hidden><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Hero -->
+    <!-- 1. Hero -->
     <section class="hero">
         <div class="hero-media">
-            <img src="img/hero-pizza-oven.webp" alt="Pizza going into Toppino's brick wood-fired oven" />
+            <img src="img/hero-pizza-oven.webp" srcset="img/hero-pizza-oven-960.webp 960w, img/hero-pizza-oven.webp 1920w" sizes="100vw" alt="Neapolitan pizza baking in a live brick oven at Toppino's, Sindhu Bhavan Road Ahmedabad" fetchpriority="high" />
         </div>
         <div class="hero-content">
             <span class="hero-eyebrow">Napoli Style · Est. 2024 · Thaltej, Ahmedabad</span>
-            <h1 class="hero-title">Italian-Led Cooking, <em>Fired</em> Fresh</h1>
-            <p class="hero-sub">Neapolitan pizza at the heart of an Italian-led menu, alongside a broad mix of global favorites, including Turkish pide. Handcrafted and made for sharing.</p>
+            <h1 class="hero-title">Neapolitan Pizza on Sindhu Bhavan Road, <em>Fired Fresh</em> in a Live Brick Oven</h1>
+            <p class="hero-sub">Hand-stretched dough, simple honest toppings and pizzas baked in front of you. Italian-led cooking for family dinners, date nights and long tables of friends.</p>
             <div class="hero-ctas">
-                <a href="menu.html" class="btn btn-terracotta" data-track="hero_view_menu">View Menu</a>
+                <a href="menu" class="btn btn-terracotta" data-track="hero_view_menu">View Menu and Prices</a>
                 <a href="#" class="btn btn-outline-cream" data-site-href="directions" target="_blank" rel="noopener" data-track="hero_directions">
-                    <i class="fa-solid fa-location-dot"></i> Visit Us
+                    <i class="fa-solid fa-location-dot"></i> Get Directions
                 </a>
             </div>
         </div>
         <span class="hero-scroll-cue"><i class="fa-solid fa-chevron-down"></i></span>
     </section>
-    <div class="scallop-divider"></div>
 
-    <!-- Brand Positioning -->
+    <!-- Trust strip -->
+    <div class="trust-strip">
+        <div class="wrap">
+            <ul>
+                <li><i class="fa-solid fa-indian-rupee-sign"></i>Pizzas from ₹399</li>
+                <li><i class="fa-solid fa-hand"></i>Hand-stretched dough</li>
+                <li><i class="fa-solid fa-fire"></i>Live brick oven</li>
+                <li><i class="fa-solid fa-children"></i>Family-friendly</li>
+                <li><i class="fa-solid fa-location-dot"></i>Near Ornet Park, Thaltej</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2. Why Toppino's -->
     <section class="section">
-        <div class="wrap positioning">
-            <span class="eyebrow">Our Story</span>
-            <p>Toppino's serves an Italian-led menu of Neapolitan pizza and pasta, alongside a broad mix of other favorites and a smaller selection of Turkish, Greek, Mexican and Mediterranean dishes.</p>
-            <div class="trait-row">
-                <span class="trait-chip">Rustic</span>
-                <span class="trait-chip">Artisan</span>
-                <span class="trait-chip">Handcrafted</span>
-                <span class="trait-chip">Family-Friendly</span>
-                <span class="trait-chip">Premium</span>
+        <div class="wrap">
+            <div class="section-head center">
+                <span class="eyebrow">Why Toppino's</span>
+                <h2 class="section-title">Why People Love Eating at Toppino's</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="icon"><i class="fa-solid fa-hand"></i></div>
+                    <h3>Hand-Stretched Dough</h3>
+                    <p>Every base is shaped by hand, never rolled or machine-pressed.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="icon"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Live Brick Oven</h3>
+                    <p>Baked at high heat for a blistered, smoky crust. No frozen bases.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+                    <h3>Made for Sharing</h3>
+                    <p>An Italian-led menu with pizza, pasta, salads, desserts and more.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Preview -->
+    <!-- 3. Popular Pizzas (cards render from js/site-data.js POPULAR_PIZZAS) -->
     <section class="section alt">
         <div class="wrap">
             <div class="section-head center">
                 <span class="eyebrow">From The Oven</span>
-                <h2 class="section-title">A Taste of the Menu</h2>
-                <p class="section-lede">A sample of our Neapolitan pizzas, pasta and more.</p>
+                <h2 class="section-title">Our Most Loved Neapolitan Pizzas</h2>
+                <p class="section-lede">Start with a classic or go bold with burrata and truffle. Every pizza is stretched by hand and fired fresh.</p>
             </div>
-            <div class="menu-preview-grid" id="menuPreviewGrid"></div>
-            <div style="text-align:center; margin-top:3rem;">
-                <a href="menu.html" class="btn btn-pine" data-track="preview_view_full_menu">View Full Menu</a>
+            <div class="menu-preview-grid" id="popularPizzas"></div>
+            <div class="section-actions">
+                <a href="menu#pizzas" class="btn btn-pine" data-track="home_all_pizzas">See All Pizzas</a>
             </div>
         </div>
     </section>
 
-    <!-- Brick Oven / Live Kitchen -->
+    <!-- 4. Menu at a Glance (cards + starting prices render from js/site-data.js) -->
     <section class="section">
+        <div class="wrap">
+            <div class="section-head center">
+                <span class="eyebrow">Menu at a Glance</span>
+                <h2 class="section-title">Pizza, Pasta, Salads and More</h2>
+            </div>
+            <div class="category-grid" id="menuGlance"></div>
+            <div class="section-actions">
+                <a href="menu" class="btn btn-pine" data-track="home_full_menu">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Live Fire -->
+    <section class="section alt">
         <div class="wrap split">
             <div class="split-media">
                 <div class="arch-media ratio-wide">
-                    <img src="img/brick-oven-live.webp" alt="Pizza baking on a wooden peel in front of Toppino's live brick oven" loading="lazy" />
+                    <img src="img/brick-oven-live.webp" alt="Neapolitan pizza baking in the live brick oven at Toppino's, Thaltej Ahmedabad" loading="lazy" />
                 </div>
             </div>
             <div class="split-text">
                 <span class="eyebrow">Live Fire</span>
                 <h2 class="section-title">Honest Ingredients, Cooked in the Open</h2>
-                <p>Our brick oven sits at the heart of the café  dough stretched by hand, topped simply, and fired at high heat until the crust blisters. No shortcuts, no frozen bases  just the same live-fire process you can watch from your table.</p>
-                <a href="about.html" class="btn btn-outline-ink" data-track="home_about_link">Our Process</a>
+                <p>Our brick oven sits at the heart of the cafe. Dough is stretched by hand, topped simply and baked at high heat until the crust blisters. No shortcuts and no frozen bases. Watch the same live-fire process from your table.</p>
+                <a href="about#process" class="btn btn-outline-ink" data-track="home_how_we_bake">See How We Bake</a>
             </div>
         </div>
     </section>
 
-    <!-- Morning / Salad Teaser -->
-    <section class="section alt">
+    <!-- 6. Lighter Plates -->
+    <section class="section">
         <div class="wrap split reverse">
             <div class="split-media">
                 <div class="arch-media ratio-wide">
-                    <img src="img/salad-bowl.webp" alt="Fresh garden salad bowl at Toppino's" loading="lazy" />
+                    <img src="img/dishes/salad-toppinos-energy-bowl.webp" alt="Toppino's Energy Bowl salad at Toppino's, Thaltej Ahmedabad" loading="lazy" />
                 </div>
             </div>
             <div class="split-text">
                 <span class="eyebrow">Lighter Plates</span>
-                <h2 class="section-title">Fresh Salads, Made for a Lighter Meal</h2>
-                <p>Choose from crisp salads, grain bowls and more, prepared fresh with bright ingredients.</p>
-                <a href="menu.html#salads" class="btn btn-outline-ink" data-track="home_salad_link">See Menu</a>
+                <h2 class="section-title">Fresh Salads for a Lighter Meal</h2>
+                <p>Crisp salads, grain bowls and more, prepared fresh with bright ingredients. Try the Burrata Caprese, Toppino's Energy Bowl or the Hippie High Protein Salad.</p>
+                <a href="menu#salads" class="btn btn-outline-ink" data-track="home_salads">See Salads</a>
             </div>
         </div>
     </section>
 
-    <!-- Ambience -->
-    <section class="section">
+    <!-- 7. The Space -->
+    <section class="section alt">
         <div class="wrap">
             <div class="section-head center">
                 <span class="eyebrow">The Space</span>
-                <h2 class="section-title">Warm, Rustic, Made for Lingering</h2>
-                <p class="section-lede">A handcrafted interior built for families, date nights and long tables of friends.</p>
+                <h2 class="section-title">Warm, Rustic and Made for Lingering</h2>
+                <p class="section-lede">A handcrafted interior built for family dinners, date nights and long tables of friends. Come hungry, stay long.</p>
             </div>
             <div class="ambience-grid">
-                <div class="arch-media ratio-wide fade-in"><img src="img/cafe-interior-cozy.webp" alt="Cozy warm-toned interior seating at Toppino's" loading="lazy" /></div>
-                <div class="arch-media ratio-portrait fade-in"><img src="img/dough-hands.webp" alt="Hands holding fresh hand-stretched pizza dough" loading="lazy" /></div>
-                <div class="arch-media ratio-portrait fade-in"><img src="img/cafe-interior-modern.webp" alt="Wood-toned dining room at Toppino's Pizzeria" loading="lazy" /></div>
+                <div class="arch-media ratio-wide fade-in"><img src="img/cafe-interior-cozy.webp" alt="Rustic dining space at Toppino's pizzeria, Thaltej Ahmedabad" loading="lazy" /></div>
+                <div class="arch-media ratio-portrait fade-in"><img src="img/dough-hands.webp" alt="Hand-stretched pizza dough at Toppino's Ahmedabad" loading="lazy" /></div>
+                <div class="arch-media ratio-portrait fade-in"><img src="img/cafe-interior-modern.webp" alt="Rustic dining room with wooden tables at Toppino's pizzeria, Thaltej Ahmedabad" loading="lazy" /></div>
+            </div>
+            <div class="section-actions">
+                <a href="visit-us" class="btn btn-outline-ink" data-track="home_plan_visit">Plan Your Visit</a>
             </div>
         </div>
     </section>
 
-    <!-- Reviews / Social Proof (honest  no fabricated testimonials) -->
-    <section class="section alt">
+    <!-- 8. Reviews (honest, no fabricated testimonials) -->
+    <section class="section">
         <div class="wrap">
             <div class="reviews-card fade-in">
                 <div class="reviews-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <h3>We're Just Getting Started</h3>
-                <p>Toppino's is a brand-new relaunch in Thaltej  if you've visited us, we'd love for you to be one of our very first Google reviews.</p>
-                <a href="#" class="btn btn-terracotta" data-site-href="googleReview" target="_blank" rel="noopener" data-track="review_cta">Leave a Google Review</a>
+                <h2>We Are Just Getting Started</h2>
+                <p>Toppino's is a new relaunch in Thaltej. If you have visited us, we would love for you to be one of our first Google reviewers.</p>
+                <a href="#" class="btn btn-terracotta" data-site-href="googleReview" target="_blank" rel="noopener" data-track="review_cta" hidden>Leave a Google Review</a>
             </div>
         </div>
     </section>
 
-    <!-- Location + Hours -->
-    <section class="section">
+    <!-- 9. Visit -->
+    <section class="section alt">
         <div class="wrap location-grid">
             <div>
                 <span class="eyebrow">Find Us</span>
-                <h2 class="section-title">Visit Toppino's</h2>
-                <p class="section-lede" data-site-text="address.full"></p>
+                <h2 class="section-title">Find Toppino's on Sindhu Bhavan Road, Thaltej</h2>
+                <p class="section-lede" data-site-text="address.short">Near Ornet Park, 3, Sindhu Bhavan Marg, PRL Colony, Thaltej, Ahmedabad 380059</p>
                 <div class="info-list" id="hoursList"></div>
-                <div class="hero-ctas">
+                <div class="hero-ctas" style="justify-content:flex-start;">
                     <a href="#" class="btn btn-terracotta" data-site-href="directions" target="_blank" rel="noopener" data-track="location_directions">
                         <i class="fa-solid fa-location-dot"></i> Get Directions
                     </a>
-                    <a href="#" class="btn btn-outline-ink" data-site-href="tel" data-track="location_call">
+                    <a href="#" class="btn btn-outline-ink" data-site-href="tel" data-track="location_call" hidden>
                         <i class="fa-solid fa-phone"></i> Call Us
                     </a>
                 </div>
             </div>
             <div class="map-embed">
-                <iframe src="https://maps.google.com/maps?q=Near%20Ornet%20Park%2C%20Sindhu%20Bhavan%20Marg%2C%20Thaltej%2C%20Ahmedabad&output=embed" loading="lazy" title="Map to Toppino's Pizzeria"></iframe>
+                <iframe src="https://maps.google.com/maps?q=Near%20Ornet%20Park%2C%20Sindhu%20Bhavan%20Marg%2C%20Thaltej%2C%20Ahmedabad&output=embed" loading="lazy" title="Map to Toppino's Neapolitana Pizzeria, Sindhu Bhavan Road, Thaltej"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Instagram CTA -->
+    <!-- 10. Follow -->
     <section class="instagram-band">
         <i class="fa-brands fa-instagram"></i>
-        <h3>Follow the Journey</h3>
-        <p data-site-text="instagramHandle"></p>
-        <a href="#" class="btn btn-outline-cream" data-site-href="instagram" target="_blank" rel="noopener" data-track="instagram_follow">Follow Us</a>
+        <h2>Follow the Journey</h2>
+        <p data-site-text="instagramHandle">@toppinospizzariaofficial</p>
+        <div class="hero-ctas">
+            <a href="#" class="btn btn-outline-cream" data-site-href="instagram" target="_blank" rel="noopener" data-track="instagram_follow">
+                <i class="fa-brands fa-instagram"></i> Follow on Instagram
+            </a>
+            <a href="#" class="btn btn-outline-cream" data-site-href="facebook" target="_blank" rel="noopener" data-track="facebook_follow">
+                <i class="fa-brands fa-facebook-f"></i> Follow on Facebook
+            </a>
+        </div>
+    </section>
+
+    <!-- 11. Final CTA -->
+    <section class="cta-band" style="background-image:url('img/pizza-margherita-whole.webp');">
+        <div class="wrap">
+            <h2>Craving Neapolitan Pizza Tonight?</h2>
+            <p>Visit us near Ornet Park, Thaltej, and taste it fresh from the oven.</p>
+            <div class="hero-ctas">
+                <a href="menu" class="btn btn-terracotta" data-track="final_view_menu">View Menu</a>
+                <a href="#" class="btn btn-outline-cream" data-site-href="directions" target="_blank" rel="noopener" data-track="final_directions">
+                    <i class="fa-solid fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -238,50 +315,59 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-brand">
-                        <img src="img/logo.png" alt="Toppino's Pizzeria logo" />
+                        <img src="img/logo.webp" alt="Toppino's Neapolitana Pizzeria logo" width="184" height="192" loading="lazy" />
                         <span>Toppino's</span>
                     </div>
-                    <p>An Italian-led menu of Neapolitan pizza and global favorites, served in the heart of Thaltej, Ahmedabad.</p>
+                    <p>Neapolitan pizza, pasta and Italian-led favourites on Sindhu Bhavan Road, Thaltej, Ahmedabad.</p>
                     <div class="footer-order-pills">
-                        <span class="footer-order-pill">Zomato  Coming Soon</span>
-                        <span class="footer-order-pill">Swiggy  Coming Soon</span>
+                        <span class="footer-order-pill">Zomato Coming Soon</span>
+                        <span class="footer-order-pill">Swiggy Coming Soon</span>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h5>Explore</h5>
-                    <a href="menu.html">Menu</a>
-                    <a href="about.html">About Us</a>
-                    <a href="visit.html">Visit Us</a>
-                    <a href="franchise.html">Franchise</a>
+                    <a href="menu">Menu</a>
+                    <a href="about">About</a>
+                    <a href="visit-us">Visit Us</a>
+                    <a href="contact">Contact</a>
+                    <a href="franchise">Franchise</a>
                 </div>
                 <div class="footer-col">
-                    <h5>Contact</h5>
-                    <a href="#" data-site-href="tel" data-site-text="phoneDisplay" data-track="footer_call"></a>
-                    <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" data-track="footer_whatsapp">WhatsApp Us</a>
-                    <a href="#" data-site-href="email" data-site-text="email" data-track="footer_email"></a>
+                    <h5>Connect</h5>
+                    <a href="#" data-site-href="instagram" target="_blank" rel="noopener" data-track="footer_instagram">Instagram</a>
+                    <a href="#" data-site-href="facebook" target="_blank" rel="noopener" data-track="footer_facebook">Facebook</a>
+                    <a href="#" data-site-href="tel" data-site-text="phoneDisplay" data-track="footer_call" hidden></a>
+                    <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" data-track="footer_whatsapp" hidden>WhatsApp Us</a>
+                    <a href="#" data-site-href="email" data-site-text="email" data-track="footer_email" hidden></a>
                 </div>
                 <div class="footer-col">
                     <h5>Visit</h5>
-                    <p data-site-text="address.full"></p>
+                    <p data-site-text="address.full">Near Ornet Park, 3, Sindhu Bhavan Marg, PRL Colony, Thaltej, Ahmedabad, Gujarat 380059</p>
                     <a href="#" data-site-href="directions" target="_blank" rel="noopener" data-track="footer_directions">Get Directions →</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span data-site-year></span> Toppino's Pizzeria. All rights reserved. &nbsp;&middot;&nbsp; 
-                    <!-- <a href="credits.html" style="color:inherit;text-decoration:underline;">Photo Credits</a> -->
-                </p>
+                <p>&copy; <span data-site-year></span> Toppino's Neapolitana Pizzeria. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="#" data-site-href="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" data-site-href="googleReview" target="_blank" rel="noopener" aria-label="Google Reviews"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" data-site-href="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" data-site-href="googleReview" target="_blank" rel="noopener" aria-label="Google Reviews" hidden><i class="fa-brands fa-google"></i></a>
+                    <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp" hidden><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <button id="scrollTop">Back to top ↑</button>
             </div>
         </div>
     </footer>
 
+    <!-- Sticky mobile action bar -->
+    <div class="mobile-action-bar">
+        <a href="#" data-site-href="directions" target="_blank" rel="noopener" data-track="mobilebar_directions"><i class="fa-solid fa-location-dot"></i>Get Directions</a>
+        <a href="menu" data-track="mobilebar_menu"><i class="fa-solid fa-utensils"></i>View Menu</a>
+        <a href="#" data-site-href="tel" data-track="mobilebar_call" hidden><i class="fa-solid fa-phone"></i>Call</a>
+        <a href="#" data-site-href="whatsapp" target="_blank" rel="noopener" data-track="mobilebar_whatsapp" hidden><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/site-data.js"></script>
     <script src="js/main.js"></script>
 </body>

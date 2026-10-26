@@ -1,0 +1,25 @@
+# Toppino's Neapolitana Pizzeria: clean URLs + HTTPS for Apache hosting (Hostinger, cPanel, etc.)
+# GitHub Pages and Netlify ignore this file; they already serve /menu from menu.html.
+Options -MultiViews
+RewriteEngine On
+
+# HTTPS is mandatory
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# old URLs
+RewriteRule ^visit(\.html)?$ /visit-us [L,R=301]
+RewriteRule ^toppinos_menu\.html$ /menu [L,R=301]
+
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^ / [L,R=301]
+
+# /page.html -> /page
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# /page -> serve page.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
