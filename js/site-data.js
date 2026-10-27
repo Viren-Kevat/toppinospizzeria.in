@@ -221,6 +221,7 @@ const MENU = [
             { name: "Passionfruit Mojito", desc: "Passionfruit, Mint, Lime, Soda", price: 299, img: "img/dishes/mocktail-passionfruit-mojito.webp" }
         ]
     },
+    /*
     {
         // No photos yet  add img: "img/dishes/cold-coffee-<name>.webp" to each item (and a cover) once supplied
         id: "cold-coffee",
@@ -237,6 +238,7 @@ const MENU = [
             { name: "Vanilla Cream Cold Coffee", desc: "Espresso, Vanilla, Milk, Cream", price: 299 }
         ]
     },
+    */
     {
         id: "carbonated",
         title: "Carbonated",
